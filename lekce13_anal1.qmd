@@ -1,0 +1,194 @@
+---
+title: "Lekce 13: analytická geometrie, body a přímky"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si souřadnice. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="vzdálenost a střed"}
+Pro body $A[x_1,y_1]$, $B[x_2,y_2]$ je
+$$|AB|=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2},\qquad S_{AB}=\left[\frac{x_1+x_2}2,\frac{y_1+y_2}2\right].$$
+Vzdálenost je Pythagorova věta v pravoúhlém trojúhelníku s odvěsnami $|x_2-x_1|$ a $|y_2-y_1|$.
+:::
+
+::: {.definition data-n="2" data-name="směrnice a rovnice přímky"}
+Přímka procházející body $A$, $B$ s $x_1\ne x_2$ má *směrnici* $k=\frac{y_2-y_1}{x_2-x_1}$. Přímka se směrnicí $k$ procházející bodem $[x_0,y_0]$ má rovnici $y-y_0=k(x-x_0)$. *Obecný tvar* je $ax+by+c=0$.
+:::
+
+::: {.definition data-n="3" data-name="rovnoběžky a kolmice"}
+Dvě přímky se směrnicemi $k_1,k_2$ jsou rovnoběžné, právě když $k_1=k_2$. Jsou kolmé, právě když $k_1k_2=-1$.
+:::
+
+::: {.problem data-n="1"}
+Určete $|AB|$ pro $A[1,2]$, $B[4,6]$.
+:::
+
+<details><summary>Řešení</summary>
+
+$\sqrt{3^2+4^2}=5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Určete střed úsečky $AB$ pro $A[-2,3]$, $B[4,7]$.
+:::
+
+<details><summary>Řešení</summary>
+
+$\left[\frac{-2+4}2,\frac{3+7}2\right]=[1,5]$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Určete směrnici přímky $AB$, $A[1,2]$, $B[4,-1]$.
+:::
+
+<details><summary>Řešení</summary>
+
+$k=\frac{-1-2}{4-1}=-1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Napište rovnici přímky se směrnicí $2$ procházející bodem $[1,3]$ a převeďte ji na obecný tvar.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte do $y-y_0=k(x-x_0)$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$y-3=2(x-1)$, tedy $y=2x+1$, obecně $2x-y+1=0$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Napište rovnici přímky $AB$ pro $A[1,2]$, $B[4,-1]$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Směrnici znáte z úlohy 3. Bod si vyberte.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$y-2=-1\cdot(x-1)$, tedy $y=-x+3$, obecně $x+y-3=0$. Kontrola bodem $B$: $4-1-3=0$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Určete směrnici a průsečíky s osami přímky $3x-2y+6=0$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Vyjádřete $y$. Průsečík s osou $x$: $y=0$. S osou $y$: $x=0$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$y=\frac32x+3$, směrnice $\frac32$. Osa $x$: $3x+6=0$, $[-2,0]$. Osa $y$: $-2y+6=0$, $[0,3]$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Najděte rovnici přímky kolmé na $y=2x+1$ procházející bodem $[4,1]$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Směrnice kolmé přímky je $-\frac1{2}$ (definice 3).
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$k=-\frac12$. $y-1=-\frac12(x-4)$, tedy $y=-\frac x2+3$, obecně $x+2y-6=0$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Najděte průsečík přímek $x+y=3$ a $2x-y=0$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Sečtěte rovnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Součet: $3x=3$, $x=1$, $y=2$. Průsečík $[1,2]$. Kontrola: $1+2=3$, $2-2=0$. $\blacksquare$
+
+</details>
+
+::: {.definition data-n="4" data-name="vzdálenost bodu od přímky"}
+Vzdálenost bodu $[x_0,y_0]$ od přímky $ax+by+c=0$ je $\dfrac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}$.
+:::
+
+::: {.problem data-n="9"}
+Určete vzdálenost bodu $[1,2]$ od přímky $3x+4y-3=0$.
+:::
+
+<details><summary>Řešení</summary>
+
+$\dfrac{|3+8-3|}{\sqrt{9+16}}=\dfrac85$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="10"}
+Určete obsah trojúhelníku $A[1,1]$, $B[5,1]$, $C[3,5]$.
+:::
+
+<details><summary>Řešení</summary>
+
+Strana $AB$ je vodorovná délky $4$, výška z $C$ je $5-1=4$. $S=\frac12\cdot4\cdot4=8$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Rozdíl čtverců: najděte $a>b$ přirozená s $a^2-b^2=15$. (Lekce 9)
+:::
+
+<details><summary>Řešení</summary>
+
+$(8,7)$ a $(4,1)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Řešte $2\cos x=\sqrt3$ v $\langle0,2\pi)$. (Lekce 4)
+:::
+
+<details><summary>Řešení</summary>
+
+$x=\frac\pi6$ nebo $x=\frac{11\pi}6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Poloměr vepsané kružnice pravoúhlého trojúhelníku s odvěsnami $5$ a $12$. (Lekce 7)
+:::
+
+<details><summary>Řešení</summary>
+
+$r=\frac{5+12-13}2=2$. $\blacksquare$
+
+</details>

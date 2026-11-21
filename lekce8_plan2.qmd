@@ -1,0 +1,203 @@
+---
+title: "Lekce 8: pravoúhlý trojúhelník a obsahy"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si obrázek. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="výška na přeponu"}
+V pravoúhlém trojúhelníku $ABC$ s pravým úhlem u $C$ označme $P$ patu výšky z $C$ na přeponu $AB$. Úseky přepony jsou $c_a=AP$ a $c_b=PB$, takže $c=c_a+c_b$. Výška je $v=CP$.
+:::
+
+::: {.problem data-n="1"}
+Dokažte, že trojúhelníky $ABC$, $ACP$ a $CBP$ jsou navzájem podobné.
+:::
+
+<details><summary>Nápověda</summary>
+
+Každé dva mají společný ostrý úhel a každý je pravoúhlý. Co plyne ze součtu úhlů?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Trojúhelníky $ABC$ a $ACP$ mají pravý úhel (u $C$, resp. u $P$) a společný úhel u $A$. Trojúhelníky $ABC$ a $CBP$ mají pravý úhel a společný úhel u $B$. Třetí úhly se dopočtou do $180^\circ$, takže jsou všechny úhly shodné. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte Euklidovu větu o odvěsně $a^2=c\cdot c_b$ a větu o výšce $v^2=c_a\cdot c_b$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Z podobnosti $ABC\sim CBP$ je $\frac{BC}{AB}=\frac{BP}{BC}$. Pro druhou větu použijte podobnost $ACP\sim CBP$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Z $ABC\sim CBP$: $\frac ac=\frac{c_b}a$, tedy $a^2=c\,c_b$. Z $ACP\sim CBP$ (odpovídají si $A\leftrightarrow C$, $C\leftrightarrow B$, $P\leftrightarrow P$): $\frac{c_a}v=\frac v{c_b}$, tedy $v^2=c_ac_b$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Pravoúhlý trojúhelník má odvěsny $6$ a $8$. Určete výšku na přeponu a úseky $c_a$, $c_b$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Obsah spočtěte dvěma způsoby: $\frac12\cdot6\cdot8$ a $\frac12\cdot c\cdot v$. Úseky z Euklidových vět.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$c=10$. Z obsahu $\frac12\cdot48=\frac12\cdot10\cdot v$, tedy $v=\frac{24}5=4{,}8$. Z $a^2=c\,c_b$: $36=10c_b$, $c_b=3{,}6$. Pak $c_a=6{,}4$. Kontrola: $c_ac_b=23{,}04=4{,}8^2$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="4"}
+Výška na přeponu rozdělí přeponu pravoúhlého trojúhelníku na úseky $9$ a $16$. Určete délky stran.
+:::
+
+<details><summary>Řešení</summary>
+
+$c=25$. $v^2=9\cdot16=144$, $v=12$. $a^2=25\cdot9=225$, $a=15$. $b^2=25\cdot16=400$, $b=20$. $\blacksquare$
+
+</details>
+
+::: {.definition data-n="2" data-name="úlohy se čtvercem"}
+Ve čtverci $ABCD$ se stranou $s$ označme $K$ střed $AB$ a $L$ střed $AD$. Úsečky $KD$ a $LC$ se protínají v bodě $M$.
+:::
+
+```{=html}
+<svg viewBox="0 0 260 260" width="260" height="260" style="display:block;margin:1rem auto" role="img" aria-label="Čtverec ABCD s úsečkami KD a LC">
+  <polygon points="20,220 220,220 220,20 20,20" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="120" y1="220" x2="20" y2="20" stroke="#000"/>
+  <line x1="20" y1="120" x2="220" y2="20" stroke="#000"/>
+  <g font-family="serif" font-size="15">
+    <text x="6" y="236">A</text><text x="222" y="236">B</text>
+    <text x="224" y="18">C</text><text x="6" y="16">D</text>
+    <text x="114" y="238">K</text><text x="2" y="124">L</text><text x="66" y="96">M</text>
+  </g>
+</svg>
+```
+
+::: {.problem data-n="5"}
+Dokažte, že $KD\perp LC$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $AKD$ a $DLC$ jsou shodné (proč?). Jaké úhly mají stejnou velikost? Co dává součet úhlů v trojúhelníku $DMC$?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$AK=DL=\frac s2$, $AD=DC=s$ a oba mají pravý úhel (u $A$, resp. u $D$). Jsou shodné, proto $\angle ADK=\angle DCL$. V trojúhelníku $DMC$ je $\angle MDC=90^\circ-\angle ADK=90^\circ-\angle DCL=90^\circ-\angle MCD$. Součet $\angle MDC+\angle MCD=90^\circ$, tedy $\angle DMC=90^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Určete $LD$, $DC$ a $LC$ pomocí $s$. Který úsek v trojúhelníku $LDC$ (pravý úhel u $D$) je výška na přeponu?
+:::
+
+<details><summary>Řešení</summary>
+
+$LD=\frac s2$, $DC=s$, $LC=\sqrt{\frac{s^2}4+s^2}=\frac{s\sqrt5}2$. Podle úlohy 5 je $DM\perp LC$, takže $DM$ je výška na přeponu $LC$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Je $LM=1$ cm. Použijte větu o odvěsně z úlohy 2 v trojúhelníku $LDC$ a určete $s$ a $s^2$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Odvěsna $LD$, přepona $LC$ a její úsek $LM$: $LD^2=LC\cdot LM$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$LD^2=LC\cdot LM$, tedy $\frac{s^2}4=\frac{s\sqrt5}2\cdot1$. Odtud $s=2\sqrt5$ a $s^2=20$ cm$^2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Určete $LC$ a $MC$ v centimetrech a ukažte, že obsahy trojúhelníků $LMD$ a $DMC$ jsou v poměru $1:4$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $LMD$ a $DMC$ mají společnou výšku $DM$ z vrcholu $D$. Obsahy jsou v poměru základen.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Z úlohy 7 je $LC=LD^2/LM=\frac{s^2/4}1=5$. Pak $MC=LC-LM=4$. Trojúhelníky $LMD$ a $DMC$ mají společnou výšku $DM$ a základny $LM=1$, $MC=4$ na jedné přímce, jejich obsahy jsou tedy v poměru $1:4$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="9"}
+Ve čtverci $ABCD$ označme $K$ střed strany $AB$ a $L$ střed strany $AD$. Úsečky $KD$ a $LC$ se protínají v bodě $M$ a rozdělují čtverec na dva trojúhelníky a dva čtyřúhelníky. Vypočtěte jejich obsahy, jestliže úsečka $LM$ má délku $1$ cm.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, 63. ročník, úloha 4 (matematickaolympiada.cz, soubor c63in.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 5 až 8. Trojúhelník $LDC$ má obsah $\frac12\cdot LD\cdot DC$. Trojúhelník $AKD$ se skládá z čtyřúhelníku $AKML$ a trojúhelníku $LMD$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 7 je $s^2=20$ cm$^2$ a podle úlohy 8 je $LC=5$, $LM=1$, $MC=4$. Obsah trojúhelníku $LDC$ je $\frac12\cdot\frac s2\cdot s=\frac{s^2}4=5$. Rozděluje se v poměru $1:4$: $S_{LMD}=1$ cm$^2$, $S_{DMC}=4$ cm$^2$. Trojúhelník $AKD$ je shodný s $DLC$ (úloha 5), jeho obsah je $5$. Je složen z $AKML$ a $LMD$, tedy $S_{AKML}=5-1=4$ cm$^2$. Zbytek: $S_{KBCM}=20-1-4-4=11$ cm$^2$.
+
+Odpověď: trojúhelníky $1$ a $4$ cm$^2$, čtyřúhelníky $4$ a $11$ cm$^2$. Kontrola souřadnicemi: $M=(\frac s5,\frac{3s}5)$ pro $A=[0,0]$ vede na stejná čísla. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Poloměr vepsané kružnice pravoúhlého trojúhelníku s odvěsnami $5$ a $12$. (Lekce 7)
+:::
+
+<details><summary>Řešení</summary>
+
+$c=13$, $r=\frac{5+12-13}2=2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Hodíme dvěma kostkami. Pravděpodobnost alespoň jedné šestky. (Lekce 6)
+:::
+
+<details><summary>Řešení</summary>
+
+$1-\frac{25}{36}=\frac{11}{36}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Řešte $\sin x=\frac12$ v $\langle0,2\pi)$. (Lekce 4)
+:::
+
+<details><summary>Řešení</summary>
+
+$x=\frac\pi6$ a $x=\frac{5\pi}6$. $\blacksquare$
+
+</details>

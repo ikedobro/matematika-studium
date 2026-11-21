@@ -1,0 +1,48 @@
+body {
+  font-family: "Latin Modern Roman", "CMU Serif", "Times New Roman", Times, serif;
+  font-variant-numeric: lining-nums;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 40rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  color: #111;
+  background: #fff;
+}
+h1.title { font-size: 1.9rem; font-weight: normal; text-align: center; margin-bottom: 2rem; }
+p { text-align: justify; hyphens: auto; }
+
+/* labels use explicit data-n, set in the .qmd */
+.definition::before { content: "Definice " attr(data-n) " (" attr(data-name) "). "; font-weight: bold; }
+.problem::before { content: "Úloha " attr(data-n) ". "; font-weight: bold; }
+.problem.target::before { content: "Úloha " attr(data-n) " (cílová). "; }
+.problem.bez::before { content: "Úloha " attr(data-n) " (bez nápovědy). "; }
+.poznamka::before { content: "Poznámka. "; font-style: italic; }
+.definition > p:first-child, .problem > p:first-child, .poznamka > p:first-child { display: inline; }
+
+.definition, .problem, .poznamka, details { padding: 0.6rem 0.9rem; margin: 1.4rem 0; }
+.definition { background: #dcdcdc; border: 1px solid #222; }
+.problem { background: #fff; border: 2px solid #000; }
+.problem > p + p { font-size: 0.9rem; font-style: italic; margin: 0.4rem 0 0; }
+.poznamka { background: #f4f4f4; border: 1px dashed #666; }
+details { background: #fafafa; border: 1px solid #aaa; margin: -0.6rem 0 1.2rem 1.5rem; }
+summary { cursor: pointer; font-style: italic; font-variant: small-caps; }
+details[open] > summary { margin-bottom: 0.4rem; }
+
+/* mobile and tablet */
+html { -webkit-text-size-adjust: 100%; }
+svg, img { max-width: 100%; height: auto; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.2rem 0; }
+/* position: relative so KaTeX's hidden MathML (absolutely positioned) is clipped by the scroller too */
+.definition, .problem, .poznamka, details, .katex-display { position: relative; }
+.definition, .problem, .poznamka, details { overflow-x: auto; }
+table { position: relative; display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; margin: 1rem 0; }
+td, th { padding: 0.2rem 0.5rem; border: 1px solid #999; }
+summary { padding: 0.4rem 0; }
+@media (max-width: 600px) {
+  body { font-size: 1.05rem; margin: 1rem auto; padding: 0 0.75rem; }
+  h1.title { font-size: 1.5rem; margin-bottom: 1rem; }
+  p { text-align: left; }
+  .definition, .problem, .poznamka, details { padding: 0.5rem 0.6rem; margin-top: 1rem; margin-bottom: 1rem; }
+  details { margin: -0.4rem 0 1rem 0.4rem; }
+}

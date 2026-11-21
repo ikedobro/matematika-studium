@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plán studia</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  h1 { font-size: 1.9rem; font-weight: normal; text-align: center; }
+  h2 { font-size: 1.3rem; margin-top: 2rem; border-bottom: 1px solid #888; }
+  ul.plan { list-style: none; padding: 0; }
+  ul.plan li { margin: .5rem 0; padding: .5rem .8rem; border: 2px solid #000; }
+  ul.plan li.next { background: #dcdcdc; }
+  .tag { font-size: .85rem; font-variant: small-caps; margin-left: .4rem; }
+  .why { display: block; font-size: .95rem; color: #333; margin-left: 1.6rem; }
+  .tag.nx { display: none; font-weight: bold; }
+  li.next .tag.nx { display: inline; }
+  input[type=checkbox] { width: 1.3rem; height: 1.3rem; vertical-align: middle; margin-right: .3rem; }
+  ul.plan li a { display: inline-block; padding: .15rem 0; }
+  @media (max-width: 600px) {
+    .why { margin-left: 0; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<h1>Plán studia</h1>
+
+<p>Pořadí je záměrně střídavé: jedna lekce „základy“ a jedna lekce „olympiáda“ (končí skutečnou úlohou Matematické olympiády). Střídání pomáhá, aby se věci nezapomněly. Zaškrtnutí se pamatuje v tomto prohlížeči. Šedé políčko se značkou „další“ je to, co dělat teď.</p>
+
+<h2>Jak pracovat s lekcí</h2>
+<ol>
+  <li>Úlohu řeš na papíře. Nejméně 20 minut, než otevřeš nápovědu.</li>
+  <li>Nápověda ještě není řešení. Otevři ji a zkus znovu.</li>
+  <li>Po řešení porovnej svůj postup s textem. Hlavní je postup, ne výsledek.</li>
+  <li>Do sešitu napiš u každé chyby jednu větu: co jsi udělal špatně a které pravidlo sis nepamatoval.</li>
+  <li>Každá lekce končí opakováním (R1 až R3) ze starších lekcí. Dělej je bez nápovědy.</li>
+</ol>
+
+<h2>Začátek</h2>
+<ul class="plan">
+  <li data-id="test"><input type="checkbox"> <a href="test.html">Diagnostický test</a> <span class="tag nx">← další</span>
+    <span class="why">15 úloh. Ukázal, co chybí.</span></li>
+</ul>
+
+<h2>Týden 1</h2>
+<ul class="plan">
+  <li data-id="l5"><input type="checkbox"> <a href="lekce5_komb.html">Lekce 5: kombinatorika, záleží na pořadí?</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Variace a kombinace, výběr bez pořadí, úlohy s omezením.</span></li>
+  <li data-id="l1"><input type="checkbox"> <a href="lekce1_prvocisla.html">Lekce 1: prvočísla a jejich součiny</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Cíl: skutečná úloha MO, kategorie C.</span></li>
+</ul>
+
+<h2>Týden 2</h2>
+<ul class="plan">
+  <li data-id="l6"><input type="checkbox"> <a href="lekce6_pravd.html">Lekce 6: pravděpodobnost</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Navazuje na lekci 5: příznivé a všechny možnosti, doplněk, nezávislost.</span></li>
+  <li data-id="l2"><input type="checkbox"> <a href="lekce2_aritm_posl.html">Lekce 2: aritmetická posloupnost</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Cíl: úloha Z9–I–1 (Bolek a Lolek).</span></li>
+</ul>
+
+<h2>Týden 3</h2>
+<ul class="plan">
+  <li data-id="l7"><input type="checkbox"> <a href="lekce7_plan1.html">Lekce 7: trojúhelník a kružnice</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Obsah, kružnice vepsaná a opsaná, podobnost.</span></li>
+  <li data-id="l3"><input type="checkbox"> <a href="lekce3_trig1.html">Lekce 3: trigonometrie v pravoúhlém trojúhelníku</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Sinus, kosinus, tangens, hodnoty pro 30°, 45°, 60° a trénink zpaměti.</span></li>
+</ul>
+
+<h2>Týden 4</h2>
+<ul class="plan">
+  <li data-id="l8"><input type="checkbox"> <a href="lekce8_plan2.html">Lekce 8: pravoúhlý trojúhelník a obsahy</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Euklidovy věty. Cíl: úloha o čtverci a bodech K, L, M (kategorie C).</span></li>
+  <li data-id="l4"><input type="checkbox"> <a href="lekce4_trig2.html">Lekce 4: jednotková kružnice a goniometrické rovnice</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Radiány, kvadranty, rovnice se sinem a kosinem a trénink zpaměti.</span></li>
+</ul>
+
+<h2>Týden 5</h2>
+<ul class="plan">
+  <li data-id="l9"><input type="checkbox"> <a href="lekce9_rozdil_ctvercu.html">Lekce 9: rozdíl čtverců a dělitelnost</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Cíl: součin prvočísel p, q, r s p² − (q + r)² = 637 (kategorie C).</span></li>
+  <li data-id="l10"><input type="checkbox"> <a href="lekce10_geom_posl.html">Lekce 10: geometrická posloupnost</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Součty, nekonečná řada, opakující se desetinná čísla.</span></li>
+</ul>
+
+<h2>Týden 6</h2>
+<ul class="plan">
+  <li data-id="l11"><input type="checkbox"> <a href="lekce11_nerovnosti.html">Lekce 11: čtverce a nerovnosti</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Cíl: nejmenší hodnota výrazu (a − b)² + (b − c)² + (c − a)² (kategorie C).</span></li>
+  <li data-id="l12"><input type="checkbox"> <a href="lekce12_komb2.html">Lekce 12: kombinatorika a parita</a> <span class="tag nx">← další</span>
+    <span class="why">Olympiáda. Cíl: čísla ve vrcholech krychle, součin na každé stěně sudý (kategorie C).</span></li>
+</ul>
+
+<h2>Týden 7</h2>
+<ul class="plan">
+  <li data-id="test2"><input type="checkbox"> <a href="test2.html">Kontrolní test</a> <span class="tag nx">← další</span>
+    <span class="why">15 úloh z lekcí 1 až 12. Ukáže, co zůstalo v hlavě.</span></li>
+</ul>
+
+<h2>Týden 8</h2>
+<ul class="plan">
+  <li data-id="l13"><input type="checkbox"> <a href="lekce13_anal1.html">Lekce 13: analytická geometrie, body a přímky</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Vzdálenost, střed, směrnice, rovnoběžky a kolmice.</span></li>
+  <li data-id="l14"><input type="checkbox"> <a href="lekce14_anal2.html">Lekce 14: analytická geometrie, kružnice</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Rovnice kružnice, průsečíky, tečny.</span></li>
+</ul>
+
+<h2>Týden 9</h2>
+<ul class="plan">
+  <li data-id="l15"><input type="checkbox"> <a href="lekce15_derivace1.html">Lekce 15: derivace, pravidla a tabulka</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Dlouhý trénink. Tabulku derivací se učíš opakováním.</span></li>
+  <li data-id="l16"><input type="checkbox"> <a href="lekce16_derivace2.html">Lekce 16: derivace, tečny a extrémy</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Tečna, monotonie, maxima a minima.</span></li>
+</ul>
+
+<h2>Týden 10</h2>
+<ul class="plan">
+  <li data-id="l17"><input type="checkbox"> <a href="lekce17_integral.html">Lekce 17: integrál</a> <span class="tag nx">← další</span>
+    <span class="why">Základy. Primitivní funkce, určitý integrál, obsahy.</span></li>
+</ul>
+
+<h2>Aby se nezapomnělo</h2>
+<ul>
+  <li><b>Kartičky.</b> Stáhni <a href="anki_kartky.txt">anki_kartky.txt</a>, v aplikaci Anki zvol <i>Soubor → Importovat</i> a vyber ho. Je tam asi 55 karet: hodnoty goniometrických funkcí, vzorce, derivace, integrály. Pět minut denně. Anki samo ukazuje karty, které zapomínáš, častěji.</li>
+  <li><b>Opakování v rytmu 0 – 2 – 7 – 30.</b> Tabulky v trénincích (lekce 3, 4, 15) zopakuj z hlavy v den učení, za 2 dny, za týden a za měsíc. Jednou stačí zapomenout, aby se vrátila.</li>
+  <li><b>Sešit s chybami.</b> Každá chyba jedna věta: co jsi udělal špatně a které pravidlo sis nepamatoval. Před kontrolním testem si ho přečti.</li>
+  <li><b>Zápis z hlavy.</b> Po každé lekci napiš na jednu stránku, co v ní bylo nejdůležitější, bez dívání do textu.</li>
+  <li><b>Střídání témat.</b> Proto je pořadí promíchané. Hádání, který postup se hodí, se učí jen smíšenými úlohami.</li>
+</ul>
+
+<script>
+(function () {
+  var KEY = "plan-studia-hotovo";
+  var done = { test: true }; // he has already taken the diagnostic test
+  try { done = Object.assign(done, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) {}
+  var items = document.querySelectorAll("ul.plan li");
+  function refresh() {
+    var next = null;
+    items.forEach(function (li) {
+      var on = !!done[li.dataset.id];
+      li.querySelector("input").checked = on;
+      li.classList.remove("next");
+      if (!on && !next) next = li;
+    });
+    if (next) next.classList.add("next");
+  }
+  items.forEach(function (li) {
+    li.querySelector("input").addEventListener("change", function (e) {
+      done[li.dataset.id] = e.target.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (err) {}
+      refresh();
+    });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>

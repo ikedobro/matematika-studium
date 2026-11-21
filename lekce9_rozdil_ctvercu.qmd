@@ -1,0 +1,192 @@
+---
+title: "Lekce 9: rozdíl čtverců a dělitelnost"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="rozdíl čtverců"}
+Pro libovolná čísla $a$, $b$ platí $a^2-b^2=(a-b)(a+b)$.
+:::
+
+::: poznamka
+Jsou-li $a$, $b$ celá čísla, mají $a-b$ a $a+b$ stejnou paritu, protože jejich součet $2a$ je sudý.
+:::
+
+::: {.problem data-n="1"}
+Rozložte číslo $637$ na součin prvočísel a určete všechny jeho kladné dělitele.
+:::
+
+<details><summary>Nápověda</summary>
+
+Zkuste dělit sedmi.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$637=7\cdot91=7\cdot7\cdot13=7^2\cdot13$. Dělitelé: $1,7,13,49,91,637$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Najděte všechny dvojice přirozených čísel $a>b$ s $a^2-b^2=15$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Rozložte na $(a-b)(a+b)=15$. Které dvojice činitelů $x<y$ s $xy=15$ existují? Z nich dopočtěte $a=\frac{x+y}2$, $b=\frac{y-x}2$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Dvojice $(x,y)$ s $xy=15$, $x<y$: $(1,15)$ a $(3,5)$. Z $(1,15)$: $a=8$, $b=7$. Z $(3,5)$: $a=4$, $b=1$. Kontrola: $64-49=15$, $16-1=15$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="3"}
+Najděte všechny dvojice přirozených čísel $a>b$ s $a^2-b^2=45$.
+:::
+
+<details><summary>Řešení</summary>
+
+Dvojice činitelů $(1,45)$, $(3,15)$, $(5,9)$ dávají $(a,b)=(23,22)$, $(9,6)$, $(7,2)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Nechť $p,q,r$ jsou prvočísla a $p^2-(q+r)^2=637$. Dokažte, že $(p-q-r)(p+q+r)=637$ a že oba činitelé jsou kladní, přičemž $p-q-r<p+q+r$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte definici 1 pro $a=p$, $b=q+r$. Součin je kladný. Co víte o součtu $p+q+r$?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle definice 1 je $p^2-(q+r)^2=(p-q-r)(p+q+r)=637$. Činitel $p+q+r>0$, součin je kladný, tedy i $p-q-r>0$. Dále $p-q-r<p+q+r$, protože $q+r>0$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Určete všechny možnosti pro dvojici činitelů $(x,y)$, $x<y$, $xy=637$, a pro každou spočtěte $p=\frac{x+y}2$ a $q+r=\frac{y-x}2$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte dělitele z úlohy 1. Z $x=p-q-r$, $y=p+q+r$ plyne $x+y=2p$ a $y-x=2(q+r)$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(1,637)$: $p=319$, $q+r=318$. $(7,91)$: $p=49$, $q+r=42$. $(13,49)$: $p=31$, $q+r=18$. Další dvojice neexistují (jen tři páry dělitelů s $x<y$). $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Která z čísel $319$, $49$, $31$ jsou prvočísla?
+:::
+
+<details><summary>Řešení</summary>
+
+$319=11\cdot29$ je složené. $49=7^2$ je složené. $31$ není dělitelné $2$, $3$, $5$ a $6^2=36>31$, je prvočíslo. Tedy $p=31$ a $q+r=18$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Najděte všechna prvočísla $q\le r$ s $q+r=18$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Postup jako v lekci 1, úloha 3: zkoušejte $q\le9$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$q=2$: $r=16$ ne. $q=3$: $15$ ne. $q=5$: $13$ ano. $q=7$: $11$ ano. $q=9$ není prvočíslo. Dvojice $(5,13)$ a $(7,11)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Spočtěte součiny $pqr$ pro $p=31$ a dvojice z úlohy 7.
+:::
+
+<details><summary>Řešení</summary>
+
+$31\cdot5\cdot13=31\cdot65=2015$. $31\cdot7\cdot11=31\cdot77=2387$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Dokažte, že pro $p=31$, $q=5$, $r=13$ skutečně platí $p^2-(q+r)^2=637$.
+:::
+
+<details><summary>Řešení</summary>
+
+$31^2-18^2=961-324=637$. Stejně pro $q=7$, $r=11$ (součet $18$). $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Najděte všechny možné hodnoty součinu prvočísel $p$, $q$, $r$, pro která platí $p^2-(q+r)^2=637$.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, návody k úloze 1 (matematickaolympiada.cz, soubor c65i-n.pdf; ročník neověřen).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 4 až 8.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 4 je $(p-q-r)(p+q+r)=637$ s kladnými činiteli. Podle úlohy 5 jsou možné jen tři dvojice, a podle úlohy 6 vyhovuje pouze $p=31$, $q+r=18$. Podle úlohy 7 je $\{q,r\}=\{5,13\}$ nebo $\{7,11\}$. Podle úlohy 8 je součin $pqr=2015$ nebo $2387$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Pravoúhlý trojúhelník, výška na přeponu dělí přeponu na $4$ a $9$. Určete výšku. (Lekce 8)
+:::
+
+<details><summary>Řešení</summary>
+
+$v^2=4\cdot9=36$, $v=6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Součet prvních $10$ členů aritmetické posloupnosti s $a_1=1$, $d=2$. (Lekce 2)
+:::
+
+<details><summary>Řešení</summary>
+
+$a_{10}=19$, $S=\frac{10(1+19)}2=100$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Pravděpodobnost, že při třech hodech mincí padne alespoň dvakrát líc. (Lekce 6)
+:::
+
+<details><summary>Řešení</summary>
+
+Příznivé výsledky: právě dvakrát $\binom32=3$, třikrát $1$. $\frac48=\frac12$. $\blacksquare$
+
+</details>

@@ -1,0 +1,204 @@
+---
+title: "Lekce 7: trojúhelník a kružnice"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si obrázek. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Na konci je opakování ze starších lekcí.
+
+::: {.definition data-n="1" data-name="obsah trojúhelníku"}
+Obsah trojúhelníku se stranou $a$ a výškou $v_a$ na ni je $S=\frac12av_a$. Polovinu obvodu značíme $s=\frac{a+b+c}2$.
+:::
+
+::: {.definition data-n="2" data-name="kružnice vepsaná"}
+*Kružnice vepsaná* trojúhelníku se dotýká všech tří jeho stran. Její střed $I$ je průsečík os úhlů, poloměr značíme $r$. Poloměr k bodu dotyku je kolmý na stranu.
+:::
+
+::: {.definition data-n="3" data-name="podobnost"}
+Trojúhelníky jsou *podobné*, mají-li stejné úhly. Pak jsou poměry odpovídajících stran stejné; tento poměr je koeficient podobnosti $k$.
+:::
+
+::: {.problem data-n="1"}
+Pravoúhlý trojúhelník má odvěsny $6$ a $8$. Určete přeponu a obsah.
+:::
+
+<details><summary>Řešení</summary>
+
+Přepona $\sqrt{36+64}=10$. Obsah $\frac12\cdot6\cdot8=24$ (odvěsny jsou k sobě kolmé, jedna je výška na druhou). $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte, že pro trojúhelník s kružnicí vepsanou platí $S=r\,s$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Spojte střed $I$ s vrcholy. Vzniknou tři trojúhelníky. Jaká je výška každého z nich vzhledem ke straně trojúhelníku $ABC$?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Trojúhelníky $IBC$, $ICA$, $IAB$ mají základny $a,b,c$ a výšku $r$ (kolmice ze středu na dotýkanou stranu). $S=\frac12ar+\frac12br+\frac12cr=r\cdot\frac{a+b+c}2=rs$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Určete poloměr kružnice vepsané trojúhelníku s odvěsnami $6$ a $8$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Obsah znáte z úlohy 1, polovinu obvodu spočtete. Použijte úlohu 2.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$S=24$, $s=\frac{6+8+10}2=12$, $r=\frac Ss=2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Dokažte, že tečné úsečky z jednoho bodu ke kružnici mají stejnou délku. Konkrétně: bod $A$ a body dotyku $T_1$, $T_2$ na dvou stranách trojúhelníku, střed $I$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $AT_1I$ a $AT_2I$ mají pravé úhly u $T_1$, $T_2$ a společnou přeponu. Mají také stejnou odvěsnu $r$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Trojúhelníky $AT_1I$ a $AT_2I$ jsou pravoúhlé, mají společnou přeponu $AI$ a odvěsny $IT_1=IT_2=r$. Podle Pythagorovy věty je $AT_1^2=AI^2-r^2=AT_2^2$, tedy $AT_1=AT_2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+V pravoúhlém trojúhelníku s pravým úhlem u $C$ dokažte, že $r=\dfrac{a+b-c}2$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Body dotyku na odvěsnách a střed $I$ a vrchol $C$ tvoří čtverec o straně $r$. Rozdělte odvěsny na tečné úseky a použijte úlohu 4.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Z vrcholu $C$ jsou tečné úseky délky $r$ (čtverec). Odvěsna $a=r+x_B$, odvěsna $b=r+x_A$, kde $x_A$, $x_B$ jsou tečné úseky z $A$, $B$. Podle úlohy 4 je přepona $c=x_A+x_B=(b-r)+(a-r)$. Odtud $2r=a+b-c$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Rovnoramenný trojúhelník má ramena $13$ a základnu $10$. Určete poloměr vepsané kružnice.
+:::
+
+<details><summary>Nápověda</summary>
+
+Výška na základnu rozděluje trojúhelník na dva pravoúhlé. Spočtěte výšku, obsah a $s$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Výška na základnu $v=\sqrt{13^2-5^2}=12$. $S=\frac12\cdot10\cdot12=60$, $s=\frac{13+13+10}2=18$. $r=\frac{60}{18}=\frac{10}3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+V trojúhelníku $ABC$ leží $D$ na $AB$ a $E$ na $AC$ tak, že $DE\parallel BC$. Je $AD=3$, $AB=5$, $BC=10$. Určete $DE$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $ADE$ a $ABC$ mají společný úhel u $A$ a shodné souhlasné úhly. Jaký je koeficient podobnosti?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\angle ADE=\angle ABC$ (souhlasné úhly) a $\angle A$ je společný, trojúhelníky jsou podobné s $k=\frac{AD}{AB}=\frac35$. $DE=k\cdot BC=6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+V úloze 7 je obsah trojúhelníku $ABC$ roven $50$. Určete obsah trojúhelníku $ADE$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Obě strany i výška se zmenší $k$-krát. Kolikrát se zmenší obsah?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Základna i výška se násobí $k$, obsah $k^2$. $S_{ADE}=\left(\frac35\right)^2\cdot50=\frac9{25}\cdot50=18$. $\blacksquare$
+
+</details>
+
+::: {.definition data-n="4" data-name="Thaletova věta"}
+Bod $C$ leží na kružnici s průměrem $AB$ (různý od $A$, $B$) právě když je úhel $ACB$ pravý. Důsledek: střed kružnice opsané pravoúhlému trojúhelníku je střed přepony, $R=\frac c2$.
+:::
+
+::: {.problem data-n="9"}
+Určete poloměr kružnice opsané pravoúhlému trojúhelníku s odvěsnami $5$ a $12$.
+:::
+
+<details><summary>Řešení</summary>
+
+Přepona $\sqrt{25+144}=13$, $R=\frac{13}2$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="10"}
+Rovnoramenný trojúhelník má ramena $10$ a základnu $12$. Určete poloměr vepsané kružnice.
+:::
+
+<details><summary>Řešení</summary>
+
+Výška $\sqrt{100-36}=8$, $S=\frac12\cdot12\cdot8=48$, $s=16$, $r=\frac{48}{16}=3$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Hodíme dvěma kostkami. Pravděpodobnost, že součet je $7$? (Lekce 6)
+:::
+
+<details><summary>Řešení</summary>
+
+Šest dvojic z $36$: $\frac16$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Určete $\cos45^\circ$ a $\sin60^\circ$. (Lekce 3)
+:::
+
+<details><summary>Řešení</summary>
+
+$\cos45^\circ=\frac{\sqrt2}2$, $\sin60^\circ=\frac{\sqrt3}2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Kolik je $\binom63$? Záleží na pořadí? (Lekce 5)
+:::
+
+<details><summary>Řešení</summary>
+
+$\binom63=\frac{6\cdot5\cdot4}6=20$. Na pořadí nezáleží. $\blacksquare$
+
+</details>

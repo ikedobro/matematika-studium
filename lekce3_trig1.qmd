@@ -1,0 +1,203 @@
+---
+title: "Lekce 3: trigonometrie v pravoúhlém trojúhelníku"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Bez kalkulačky.
+
+::: {.definition data-n="1" data-name="sinus, kosinus, tangens"}
+V pravoúhlém trojúhelníku s ostrým úhlem $\alpha$ označme $a$ odvěsnu protilehlou úhlu $\alpha$, $b$ odvěsnu k němu přilehlou a $c$ přeponu. Definujeme
+$$\sin\alpha=\frac ac,\qquad \cos\alpha=\frac bc,\qquad \operatorname{tg}\alpha=\frac ab.$$
+:::
+
+::: {.problem data-n="1"}
+Pravoúhlý trojúhelník má odvěsny $3$ a $4$ a přeponu $5$. Určete $\sin\alpha$, $\cos\alpha$, $\operatorname{tg}\alpha$ pro úhel $\alpha$ protilehlý odvěsně délky $3$.
+:::
+
+<details><summary>Řešení</summary>
+
+$\sin\alpha=\frac35$, $\cos\alpha=\frac45$, $\operatorname{tg}\alpha=\frac34$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte, že $\operatorname{tg}\alpha=\dfrac{\sin\alpha}{\cos\alpha}$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte z definice a zlomky vydělte.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\dfrac{\sin\alpha}{\cos\alpha}=\dfrac{a/c}{b/c}=\dfrac ab=\operatorname{tg}\alpha$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Dokažte, že $\sin^2\alpha+\cos^2\alpha=1$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte z definice a použijte Pythagorovu větu $a^2+b^2=c^2$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\sin^2\alpha+\cos^2\alpha=\dfrac{a^2}{c^2}+\dfrac{b^2}{c^2}=\dfrac{a^2+b^2}{c^2}=\dfrac{c^2}{c^2}=1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Je dáno $\sin\alpha=\frac5{13}$ a $\alpha$ je ostrý. Určete $\cos\alpha$ a $\operatorname{tg}\alpha$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohu 3 pro $\cos\alpha$, potom úlohu 2.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\cos^2\alpha=1-\frac{25}{169}=\frac{144}{169}$. Protože je $\alpha$ ostrý, $\cos\alpha>0$, tedy $\cos\alpha=\frac{12}{13}$. Pak $\operatorname{tg}\alpha=\frac{5/13}{12/13}=\frac5{12}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Rovnostranný trojúhelník má stranu $2$. Určete jeho výšku a z půlky trojúhelníku vypočtěte $\sin30^\circ$, $\cos30^\circ$, $\sin60^\circ$, $\cos60^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Výška rozděluje trojúhelník na dva pravoúhlé trojúhelníky s úhly $30^\circ$, $60^\circ$, $90^\circ$. Jakou mají přeponu a kratší odvěsnu?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Výška rozpůlí základnu, takže kratší odvěsna má délku $1$ a přepona $2$. Výška je $\sqrt{4-1}=\sqrt3$. Proti úhlu $30^\circ$ leží odvěsna $1$, proti úhlu $60^\circ$ odvěsna $\sqrt3$. Tedy $\sin30^\circ=\frac12$, $\cos30^\circ=\frac{\sqrt3}2$, $\sin60^\circ=\frac{\sqrt3}2$, $\cos60^\circ=\frac12$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Pravoúhlý rovnoramenný trojúhelník má odvěsny $1$. Určete $\sin45^\circ$, $\cos45^\circ$, $\operatorname{tg}45^\circ$.
+:::
+
+<details><summary>Řešení</summary>
+
+Přepona je $\sqrt2$. $\sin45^\circ=\cos45^\circ=\frac1{\sqrt2}=\frac{\sqrt2}2$ a $\operatorname{tg}45^\circ=1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Vypočtěte $\sin^245^\circ+\cos^230^\circ$ a $\operatorname{tg}30^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Hodnoty jsou v úlohách 5 a 6. Pro $\operatorname{tg}30^\circ$ použijte úlohu 2.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\sin^245^\circ+\cos^230^\circ=\frac12+\frac34=\frac54$. $\operatorname{tg}30^\circ=\frac{1/2}{\sqrt3/2}=\frac1{\sqrt3}=\frac{\sqrt3}3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dokažte, že pro ostrý úhel $\alpha$ platí $\sin\alpha=\cos(90^\circ-\alpha)$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Druhý ostrý úhel trojúhelníku je $90^\circ-\alpha$. Která odvěsna je mu přilehlá?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Druhý ostrý úhel je $\beta=90^\circ-\alpha$. Odvěsna $a$, protilehlá úhlu $\alpha$, je přilehlá úhlu $\beta$. Tedy $\cos\beta=\frac ac=\sin\alpha$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Z bodu vzdáleného $50$ m od paty věže vidíme vrchol věže pod úhlem $60^\circ$ nad vodorovnou rovinou. Jak vysoká je věž?
+:::
+
+<details><summary>Nápověda</summary>
+
+Nakreslete pravoúhlý trojúhelník. Které strany znáte a kterou hledáte? Která funkce je spojuje?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Výška $v$ je odvěsna protilehlá úhlu $60^\circ$, vzdálenost $50$ m je přilehlá odvěsna. $\operatorname{tg}60^\circ=\frac v{50}$, $\operatorname{tg}60^\circ=\frac{\sqrt3/2}{1/2}=\sqrt3$. Tedy $v=50\sqrt3\approx87$ m. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="10"}
+V pravoúhlém trojúhelníku $ABC$ s pravým úhlem u $C$ je přepona $c=10$ a $\alpha=30^\circ$. Určete odvěsny $a$, $b$.
+:::
+
+<details><summary>Řešení</summary>
+
+$a=c\sin30^\circ=5$ a $b=c\cos30^\circ=5\sqrt3$. Zkouška: $25+75=100=c^2$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="11"}
+Z okna ve výšce $10$ m nad zemí vidíme patu protější budovy pod úhlem $45^\circ$ pod vodorovnou rovinou a její vrchol pod úhlem $30^\circ$ nad vodorovnou rovinou. Určete výšku protější budovy.
+:::
+
+<details><summary>Řešení</summary>
+
+Vodorovná vzdálenost $d$: $\operatorname{tg}45^\circ=\frac{10}d$, tedy $d=10$. Vrchol je o $h$ nad úrovní okna, $\operatorname{tg}30^\circ=\frac hd$, tedy $h=10\cdot\frac{\sqrt3}3$. Budova má výšku $10+\frac{10\sqrt3}3\approx15{,}8$ m. $\blacksquare$
+
+</details>
+
+## Trénink: hodnoty zpaměti
+
+::: poznamka
+Jedna úloha nestačí k zapamatování. Hodnoty pro $30^\circ$, $45^\circ$, $60^\circ$ si zapamatuješ opakováním: dnes, za dva dny, za týden. Pomůcka: $\sin$ pro $30^\circ,45^\circ,60^\circ$ je $\frac{\sqrt1}2,\frac{\sqrt2}2,\frac{\sqrt3}2$, tedy $\frac12,\frac{\sqrt2}2,\frac{\sqrt3}2$. U $\cos$ jde pořadí opačně. $\operatorname{tg}=\frac{\sin}{\cos}$.
+:::
+
+::: {.problem .bez data-n="T1"}
+Nakreslete na papír tabulku $\sin$, $\cos$, $\operatorname{tg}$ pro $30^\circ$, $45^\circ$, $60^\circ$ z hlavy. Potom ji zkontrolujte.
+:::
+
+<details><summary>Řešení</summary>
+
+| | $30^\circ$ | $45^\circ$ | $60^\circ$ |
+|---|---|---|---|
+| $\sin$ | $\frac12$ | $\frac{\sqrt2}2$ | $\frac{\sqrt3}2$ |
+| $\cos$ | $\frac{\sqrt3}2$ | $\frac{\sqrt2}2$ | $\frac12$ |
+| $\operatorname{tg}$ | $\frac{\sqrt3}3$ | $1$ | $\sqrt3$ |
+
+</details>
+
+::: {.problem .bez data-n="T2"}
+Vypočtěte bez tabulky: a) $\sin30^\circ+\cos60^\circ$; b) $\sin45^\circ\cos45^\circ$; c) $\operatorname{tg}60^\circ\cdot\cos60^\circ$; d) $\sin^260^\circ+\cos^260^\circ$; e) $\cos30^\circ-\sin60^\circ$; f) $\operatorname{tg}30^\circ\cdot\operatorname{tg}60^\circ$.
+:::
+
+<details><summary>Řešení</summary>
+
+a) $1$. b) $\frac12$. c) $\sqrt3\cdot\frac12=\frac{\sqrt3}2$. d) $1$. e) $0$. f) $\frac{\sqrt3}3\cdot\sqrt3=1$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="T3"}
+Za dva dny a za týden: napište tabulku z úlohy T1 znovu z hlavy a spočtěte T2 znovu. Zapište, kolik jste měli správně.
+:::

@@ -1,0 +1,12 @@
+project:
+  type: default
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!draft_*.qmd"
+    - "!workbook.qmd"
+    - "!*_klic.qmd"
+  resources:
+    - index.html
+    - style.css
+    - anki_kartky.txt

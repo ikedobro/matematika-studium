@@ -1,0 +1,182 @@
+---
+title: "Lekce 1: prvočísla a jejich součiny"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Úlohy 3, 5, 6 a 7 jsou převzaty z návodných úloh k ní, ostatní jsou naše.
+
+::: {.definition data-n="1" data-name="prvočíslo"}
+*Prvočíslo* je celé číslo $p>1$, jehož jedinými kladnými děliteli jsou $1$ a $p$. Celé číslo větší než $1$, které není prvočíslo, se nazývá *složené*.
+:::
+
+::: poznamka
+Je-li $n=ab$ s $a\le b$, pak $a^2\le n$. Chceme-li zjistit, zda je $n$ prvočíslo, stačí tedy zkoušet dělitele $d$ s $d^2\le n$.
+:::
+
+::: {.problem data-n="1"}
+Rozhodněte, která z čísel $51$, $57$, $61$, $91$ jsou prvočísla.
+:::
+
+<details><summary>Řešení</summary>
+
+$51=3\cdot17$, $57=3\cdot19$, $91=7\cdot13$ jsou složená. Číslo $61$ není dělitelné $2$, $3$, $5$ ani $7$, a $8^2=64>61$, takže je prvočíslo. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Rozložte číslo $915$ na součin prvočísel.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dělte nejmenšími prvočísly: $2$, $3$, $5$, \dots
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$915=5\cdot183=5\cdot3\cdot61$. Číslo $61$ je prvočíslo podle úlohy 1. Tedy $915=3\cdot5\cdot61$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Určete všechna prvočísla $p\le q$, pro něž platí $p+q=14$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Z $p\le q$ plyne $p\le7$. Vyzkoušejte všechna prvočísla $p\le7$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Je $p\le 7$. Pro $p=2$ je $q=12$, složené. Pro $p=3$ je $q=11$, prvočíslo. Pro $p=5$ je $q=9$, složené. Pro $p=7$ je $q=7$, prvočíslo. Řešení: $(p,q)=(3,11)$ a $(7,7)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Dokažte, že pro libovolná čísla $p$, $q$ platí $(p+1)q-pq=q$.
+:::
+
+<details><summary>Řešení</summary>
+
+$(p+1)q-pq=pq+q-pq=q$. Zvětšíme-li první činitel součinu o $1$, součin se zvětší o druhý činitel. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Číslo $n$ je součinem dvou různých prvočísel. Zvětšíme-li menší z nich o $1$ a druhé ponecháme, jejich součin se zvětší o $7$. Určete $n$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohu 4. Které z prvočísel je rovno $7$?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Nechť $p<q$ jsou prvočísla. Podle úlohy 4 se součin zvětší o $q$, tedy $q=7$. Prvočíslo $p<7$ je $2$, $3$ nebo $5$. Tedy $n\in\{14,21,35\}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Číslo $n$ je součinem dvou prvočísel. Zvětšíme-li jedno z nich o $1$ a druhé o $1$ zmenšíme, jejich součin zůstane stejný. Určete $n$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Roznásobte $(p+1)(q-1)$ a porovnejte s $pq$. Kolik sudých prvočísel existuje?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Nechť zvětšujeme $p$ a zmenšujeme $q$. Pak $(p+1)(q-1)=pq-p+q-1=pq$, tedy $q-p=1$. Ze dvou po sobě jdoucích celých čísel je jedno sudé. Jediné sudé prvočíslo je $2$ (každé sudé číslo větší než $2$ je dělitelné dvěma a je složené). Proto $p=2$, $q=3$ a $n=6$. V opačném přiřazení rolí vyjde totéž. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Číslo $n$ je součinem dvou prvočísel. Zvětšíme-li každé z nich o $1$, jejich součin se zvětší o $35$. Určete $n$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Roznásobte $(p+1)(q+1)$. Vyjde podmínka na součet $p+q$. Použijte postup z úlohy 3.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(p+1)(q+1)-pq=p+q+1=35$, tedy $p+q=34$. Nechť $p\le q$, pak $p\le17$. Vyhovují $p=3$ ($q=31$), $p=5$ ($q=29$), $p=11$ ($q=23$), $p=17$ ($q=17$). Pro $p=2,7,13$ vychází $q=32,27,21$, složená čísla. Tedy $n\in\{93,145,253,289\}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dokažte, že pro libovolná čísla $p,q,r$ platí $(p+1)(q+1)r-pqr=r(p+q+1)$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Vytkněte $r$ a použijte výpočet z úlohy 7.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(p+1)(q+1)r-pqr=r\big((p+1)(q+1)-pq\big)=r(p+q+1)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Nechť $p<q<r$ jsou prvočísla. Dokažte, že $r\ge5$ a že pro $r=5$ je $r(p+q+1)=30$.
+:::
+
+<details><summary>Řešení</summary>
+
+Je $p\ge2$, tedy $q\ge3$ a $r>3$. Číslo $4$ není prvočíslo, proto $r\ge5$. Pro $r=5$ musí být $p<q<5$, takže $p=2$, $q=3$ a $r(p+q+1)=5\cdot6=30$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="10"}
+Nechť $p<q<r$ jsou prvočísla a platí $r(p+q+1)=915$. Dokažte, že $r=61$ a $p+q=14$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Prvočíslo $r$ dělí $915$. Použijte rozklad z úlohy 2 a úlohu 9.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 2 je $915=3\cdot5\cdot61$, takže $r\in\{3,5,61\}$. Podle úlohy 9 je $r\ge5$. Pro $r=5$ by podle úlohy 9 bylo $r(p+q+1)=30\ne915$. Zbývá $r=61$. Pak $p+q+1=915:61=15$, tedy $p+q=14$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="11"}
+Číslo $n$ je součinem tří různých prvočísel. Zvětšíme-li dvě menší z nich o $1$ a největší ponecháme nezměněno, zvětší se jejich součin o $915$. Určete číslo $n$.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, 63. ročník, úloha 3 (matematickaolympiada.cz, soubor c63in.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Označte prvočísla $p<q<r$. Použijte úlohy 8, 10 a 3.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Nechť $n=pqr$ s prvočísly $p<q<r$. Podle zadání $(p+1)(q+1)r-pqr=915$, podle úlohy 8 tedy $r(p+q+1)=915$. Podle úlohy 10 je $r=61$ a $p+q=14$. Podle úlohy 3 je $(p,q)=(3,11)$ nebo $(7,7)$. Druhá možnost nevyhovuje, prvočísla musí být různá. Tedy $n=3\cdot11\cdot61=2013$.
+
+Zkouška: $4\cdot12\cdot61=2928=2013+915$. $\blacksquare$
+
+</details>

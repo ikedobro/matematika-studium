@@ -1,0 +1,166 @@
+---
+title: "Lekce 2: aritmetická posloupnost"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády.
+
+::: {.definition data-n="1" data-name="aritmetická posloupnost"}
+Posloupnost $a_1,a_2,a_3,\dots$ se nazývá *aritmetická*, jestliže existuje číslo $d$ (*diference*) takové, že $a_{k+1}=a_k+d$ pro každé $k$. Pak $a_k=a_1+(k-1)d$.
+:::
+
+::: {.problem data-n="1"}
+Aritmetická posloupnost má $a_1=3$ a $d=4$. Určete $a_{10}$.
+:::
+
+<details><summary>Řešení</summary>
+
+$a_{10}=3+9\cdot4=39$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+V aritmetické posloupnosti je $a_3=11$ a $a_7=27$. Určete $a_1$ a $d$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Vyjádřete $a_3$ a $a_7$ pomocí $a_1$ a $d$. Odečtěte rovnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$a_3=a_1+2d=11$, $a_7=a_1+6d=27$. Odečtením $4d=16$, tedy $d=4$ a $a_1=3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Konečná aritmetická posloupnost začíná číslem $a$, končí číslem $b$ a má diferenci $d>0$. Dokažte, že má $\dfrac{b-a}{d}+1$ členů.
+:::
+
+<details><summary>Nápověda</summary>
+
+Je-li $n$ počet členů, je poslední člen $a_n=a+(n-1)d$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle definice je $b=a+(n-1)d$. Odtud $n-1=\frac{b-a}{d}$, tedy $n=\frac{b-a}{d}+1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Kolik členů má posloupnost $2023,\,2028,\,2033,\,\dots,\,3023$?
+:::
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 3 je počet členů $\frac{3023-2023}{5}+1=201$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Dvě diference jsou v poměru $5:2$. Dokažte, že existuje číslo $k$ takové, že jsou rovny $5k$ a $2k$, a že jejich rozdíl je $3k$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Označte menší diferenci $2k$. Co z poměru plyne pro větší?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Označme diference $D_1$, $D_2$ a $k=D_2/2$. Pak $D_2=2k$ a z $D_1:D_2=5:2$ plyne $D_1=\frac52D_2=5k$. Rozdíl je $5k-2k=3k$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Nechť $i$, $j$ jsou nezáporná celá čísla a $5i=2j$. Dokažte, že existuje celé $m\ge0$ s $i=2m$ a $j=5m$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Pravá strana je sudá. Co plyne pro $i$, když je $5i$ sudé?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Číslo $5i=2j$ je sudé. Kdyby $i$ bylo liché, bylo by liché i $5i$. Proto je $i$ sudé, $i=2m$. Pak $10m=2j$, tedy $j=5m$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Které členy mají společné posloupnosti $2023,2028,2033,\dots$ a $2023,2025,2027,\dots$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Členy jsou $2023+5i$ a $2023+2j$. Kdy se rovnají? Použijte úlohu 6.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$2023+5i=2023+2j$ právě když $5i=2j$. Podle úlohy 6 je $i=2m$, takže společné členy jsou $2023+10m$ pro $m=0,1,2,\dots$, tedy $2023,2033,2043,\dots$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dvě aritmetické posloupnosti začínají číslem $2023$ a mají diference $5k$ a $2k$, kde $k>0$. Dokažte, že jejich společné členy jsou právě čísla $2023+10km$, $m=0,1,2,\dots$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Postupujte jako v úloze 7. Člen $k$ se z rovnosti vykrátí.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Členy jsou $2023+5ki$ a $2023+2kj$. Rovnost nastává právě když $5ki=2kj$, tedy $5i=2j$. Podle úlohy 6 je $i=2m$, $j=5m$. Společné členy jsou $2023+10km$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Aritmetická posloupnost má $26$ členů, první je $2023$ a poslední $3023$. Určete její diferenci.
+:::
+
+<details><summary>Nápověda</summary>
+
+Poslední člen je $a_1+25d$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$3023=2023+25d$, tedy $d=1000/25=40$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Aritmetická posloupnost je taková posloupnost čísel, v níž je rozdíl každého čísla od čísla jemu předcházejícího stále stejný; tomuto rozdílu se říká diference. Bolek a Lolek měli každý svou aritmetickou posloupnost. Jak Bolkova, tak Lolkova posloupnost začínala číslem $2023$ a končila číslem $3023$. Tyto dvě posloupnosti měly $26$ společných čísel. Poměr Bolkovy a Lolkovy diference byl $5:2$. Určete rozdíl Bolkovy a Lolkovy diference.
+
+Zdroj: 72. ročník Matematické olympiády (2022/23), I. kolo kategorie Z9, úloha Z9–I–1, autorka E. Novotná (matematickaolympiada.cz, soubor z72i-9.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohu 5. Společné členy popisuje úloha 8. Úloha 9 se hodí na posloupnost společných členů.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 5 jsou diference $5k$ a $2k$ a hledaný rozdíl je $3k$. Podle úlohy 8 jsou společné členy $2023+10km$. Číslo $3023$ je členem obou posloupností, je tedy společné, a je největší možné, protože obě posloupnosti jím končí. Společných členů je $26$, proto je $3023$ jejich $26.$ člen, tedy $2023+25\cdot10k=3023$. Odtud $250k=1000$, $k=4$. Rozdíl diferencí je $3k=12$. $\blacksquare$
+
+</details>

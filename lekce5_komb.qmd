@@ -1,0 +1,173 @@
+---
+title: "Lekce 5: kombinatorika, záleží na pořadí?"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. U každé úlohy se nejdřív zeptejte: *záleží na pořadí?*
+
+::: {.definition data-n="1" data-name="pravidlo součinu"}
+Lze-li první volbu provést $m$ způsoby a po ní druhou $n$ způsoby (nezávisle na první), lze obě volby provést $m\cdot n$ způsoby. Pro $n\in\mathbb N$ je $n!=n(n-1)\cdots2\cdot1$ (*faktoriál*), $0!=1$.
+:::
+
+::: {.problem data-n="1"}
+Kolika způsoby lze seřadit $4$ lidi do řady?
+:::
+
+<details><summary>Řešení</summary>
+
+První místo $4$ způsoby, druhé $3$, třetí $2$, čtvrté $1$. Dohromady $4\cdot3\cdot2\cdot1=4!=24$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Z $8$ lidí vybíráme předsedu, místopředsedu a pokladníka (každého jiného). Kolika způsoby?
+:::
+
+<details><summary>Nápověda</summary>
+
+Vybíráme postupně tři funkce. Kolik možností je na každou?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Předseda $8$ způsoby, místopředseda $7$, pokladník $6$. Dohromady $8\cdot7\cdot6=336$. Pořadí zde *záleží*, protože funkce se liší. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Z $8$ lidí vybíráme trojici do družstva (všichni mají stejnou roli). Kolika způsoby? Využijte úlohu 2: kolikrát je v číslu $336$ započtena každá trojice?
+:::
+
+<details><summary>Nápověda</summary>
+
+Jedna trojice lidí $A,B,C$ se v úloze 2 objeví s každým jejich seřazením, tedy kolikrát? Použijte úlohu 1 pro $3$ lidi.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Každou trojici jsme v $336$ započítali $3!=6$krát (po jednom pro každé seřazení). Počet trojic je $\frac{336}6=56$. Pořadí zde *nezáleží*. $\blacksquare$
+
+</details>
+
+::: {.definition data-n="2" data-name="kombinační číslo"}
+Počet způsobů, jak z $n$ prvků vybrat $k$ prvků bez ohledu na pořadí, je
+$$\binom nk=\frac{n(n-1)\cdots(n-k+1)}{k!}=\frac{n!}{k!\,(n-k)!}.$$
+:::
+
+::: {.problem data-n="4"}
+Spočtěte $\binom62$, $\binom{10}3$, $\binom50$, $\binom{10}7$.
+:::
+
+<details><summary>Řešení</summary>
+
+$\binom62=\frac{6\cdot5}2=15$. $\binom{10}3=\frac{10\cdot9\cdot8}6=120$. $\binom50=1$. $\binom{10}7=\binom{10}3=120$, protože vybrat $7$ prvků znamená vybrat $3$, které vynecháme. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Rozhodněte, zda záleží na pořadí, a spočtěte: a) z $10$ závodníků vybereme vítěze, druhého a třetího; b) z $10$ závodníků vybereme tři, kteří postoupí do finále.
+:::
+
+<details><summary>Řešení</summary>
+
+a) Záleží: $10\cdot9\cdot8=720$. b) Nezáleží: $\binom{10}3=120$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Každý z $10$ týmů odehraje s každým jiným týmem jeden zápas. Kolik se odehraje zápasů?
+:::
+
+<details><summary>Nápověda</summary>
+
+Zápas je dvojice týmů. Záleží u dvojice na pořadí?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Zápas je neuspořádaná dvojice: $\binom{10}2=45$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Kolik existuje čtyřciferných lichých čísel, jejichž číslice jsou z množiny $\{1,2,3,4,5\}$ a žádná se neopakuje?
+:::
+
+<details><summary>Nápověda</summary>
+
+Začněte místem s omezením: poslední číslice musí být lichá. Potom doplňte ostatní místa.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Poslední číslice: $3$ způsoby ($1$, $3$ nebo $5$). První číslice: $4$ zbývající, druhá $3$, třetí $2$. Dohromady $3\cdot4\cdot3\cdot2=72$. Kdybychom začali zleva, museli bychom rozlišovat, zda už byla liché číslice použita. Proto se začíná omezeným místem. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Kolik různých pěticiferných čísel lze sestavit z číslic $1,1,2,3,4$ (každou použít právě jednou)?
+:::
+
+<details><summary>Nápověda</summary>
+
+Kdybychom rozlišili obě jedničky ($1_a,1_b$), bylo by $5!$ seřazení. Kolikrát se každé číslo započítá?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+S rozlišenými jedničkami je $5!=120$ seřazení. Prohozením $1_a$ a $1_b$ vznikne totéž číslo, každé je započítáno $2!=2$krát. Odpověď $\frac{120}2=60$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Kolika způsoby lze ze $6$ mužů a $4$ žen vybrat tříčlennou skupinu, v níž je alespoň jedna žena?
+:::
+
+<details><summary>Nápověda</summary>
+
+Spočtěte všechny skupiny a odečtěte ty, které nevyhovují.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Všech skupin je $\binom{10}3=120$. Bez ženy (jen muži) je $\binom63=20$. Vyhovuje $120-20=100$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="10"}
+Kolika způsoby lze $10$ lidí rozdělit na dva pětičlenné týmy, jsou-li týmy neoznačené (tým A a tým B se nerozlišují)?
+:::
+
+<details><summary>Nápověda</summary>
+
+Kolik je způsobů vybrat prvních pět lidí? Jak se každé rozdělení započítá?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Vybrat prvních pět lze $\binom{10}5=252$ způsoby. Každé rozdělení jsme započítali dvakrát (jednou za každý z týmů jako „první"). Odpověď $\frac{252}2=126$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="11"}
+V rovině je $8$ bodů, z nichž právě $3$ leží na jedné přímce a žádné jiné tři na přímce neleží. Kolik různých trojúhelníků mají tyto body za vrcholy?
+:::
+
+<details><summary>Řešení</summary>
+
+Trojice bodů je $\binom83=56$. Trojice ležící na přímce netvoří trojúhelník, taková je právě jedna. Vyhovuje $56-1=55$. $\blacksquare$
+
+</details>

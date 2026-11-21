@@ -1,0 +1,16 @@
+# build output
+_site/
+.quarto/
+*_files/
+*.html
+!index.html
+
+# local only: answer keys, drafts, extracted source text
+*_klic.qmd
+draft_*
+workbook.*
+zdroje.html
+__pycache__/
+
+/.quarto/
+**/*.quarto_ipynb

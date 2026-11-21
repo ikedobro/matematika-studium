@@ -1,0 +1,186 @@
+---
+title: "Lekce 6: pravděpodobnost"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Navazuje na lekci 5. Na konci je opakování ze starších lekcí.
+
+::: {.definition data-n="1" data-name="klasická pravděpodobnost"}
+Jsou-li všechny výsledky pokusu stejně možné, je pravděpodobnost jevu $A$
+$$P(A)=\frac{\text{počet příznivých výsledků}}{\text{počet všech výsledků}}.$$
+Platí $0\le P(A)\le1$. Doplňkový jev $A'$ (jev $A$ nenastane) má $P(A')=1-P(A)$.
+:::
+
+::: {.problem data-n="1"}
+Hodíme jednou kostkou. Jaká je pravděpodobnost, že padne a) sudé číslo; b) číslo alespoň $5$?
+:::
+
+<details><summary>Řešení</summary>
+
+a) Příznivé jsou $2,4,6$: $\frac36=\frac12$. b) Příznivé jsou $5,6$: $\frac26=\frac13$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Kolik je všech možných výsledků při hodu dvěma kostkami, rozlišíme-li je (první, druhá)?
+:::
+
+<details><summary>Řešení</summary>
+
+Pravidlo součinu (lekce 5): $6\cdot6=36$. Výsledky $(1,2)$ a $(2,1)$ jsou různé. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Hodíme dvěma kostkami. Jaká je pravděpodobnost, že součet je $8$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Vypište všechny dvojice (první, druhá) se součtem $8$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Příznivé jsou $(2,6),(3,5),(4,4),(5,3),(6,2)$, tedy $5$. $P=\frac5{36}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Hodíme dvěma kostkami. Jaká je pravděpodobnost, že součet je alespoň $10$?
+:::
+
+<details><summary>Řešení</summary>
+
+Součet $10$: $(4,6),(5,5),(6,4)$. Součet $11$: $(5,6),(6,5)$. Součet $12$: $(6,6)$. Dohromady $6$. $P=\frac6{36}=\frac16$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Hodíme třikrát mincí. Jaká je pravděpodobnost, že padne alespoň jednou líc?
+:::
+
+<details><summary>Nápověda</summary>
+
+Doplňkový jev: nepadne ani jedna líc.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Všech výsledků je $2^3=8$. Doplněk (třikrát rub) je $1$ výsledek. $P=1-\frac18=\frac78$. $\blacksquare$
+
+</details>
+
+::: {.definition data-n="2" data-name="nezávislé jevy"}
+Jevy $A$ a $B$ jsou *nezávislé*, jestliže výsledek jednoho neovlivní druhý (například hody dvěma kostkami). Pak $P(A\text{ a }B)=P(A)\cdot P(B)$.
+:::
+
+::: {.problem data-n="6"}
+Hodíme dvěma kostkami. Určete pravděpodobnost, že a) padnou dvě šestky; b) padne alespoň jedna šestka.
+:::
+
+<details><summary>Nápověda</summary>
+
+a) Nezávislé jevy. b) Použijte doplněk: ani jedna šestka.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+a) $\frac16\cdot\frac16=\frac1{36}$. b) Žádná šestka: $\frac56\cdot\frac56=\frac{25}{36}$. Tedy $1-\frac{25}{36}=\frac{11}{36}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+V osudí je $5$ červených a $3$ modré kuličky. Táhneme dvě kuličky najednou. Jaká je pravděpodobnost, že jsou obě červené? Použijte kombinační čísla z lekce 5.
+:::
+
+<details><summary>Nápověda</summary>
+
+Příznivé: výběr dvou z pěti červených. Všechny: výběr dvou z osmi. Pořadí nezáleží.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$P=\dfrac{\binom52}{\binom82}=\dfrac{10}{28}=\dfrac5{14}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Stejnou úlohu vyřešte jinak: táhneme jednu kuličku po druhé bez vracení. Jaká je pravděpodobnost, že první je červená a druhá je červená?
+:::
+
+<details><summary>Nápověda</summary>
+
+Po prvním tahu zbývá v osudí méně kuliček. Kolik červených a kolik všech?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+První červená: $\frac58$. Pak zbývá $4$ červených z $7$: $\frac47$. $P=\frac58\cdot\frac47=\frac{20}{56}=\frac5{14}$, stejně jako v úloze 7. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+V osudí z úlohy 7 táhneme dvě kuličky najednou. Jaká je pravděpodobnost, že je alespoň jedna modrá?
+:::
+
+<details><summary>Řešení</summary>
+
+Doplněk jevu „obě červené“. Podle úlohy 7 je $P=1-\frac5{14}=\frac9{14}$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="10"}
+V kroužku je $6$ chlapců a $4$ dívky. Náhodně vybereme tři členy. Jaká je pravděpodobnost, že jsou mezi nimi alespoň dvě dívky?
+:::
+
+<details><summary>Řešení</summary>
+
+Všech trojic je $\binom{10}3=120$. Právě dvě dívky: $\binom42\binom61=36$. Tři dívky: $\binom43=4$. Příznivých je $40$. $P=\frac{40}{120}=\frac13$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Kolika způsoby lze ze $7$ lidí vybrat dvojici? (Lekce 5)
+:::
+
+<details><summary>Řešení</summary>
+
+$\binom72=21$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Určete $\sin30^\circ+\cos60^\circ$ a $\operatorname{tg}45^\circ$. (Lekce 3)
+:::
+
+<details><summary>Řešení</summary>
+
+$\frac12+\frac12=1$ a $\operatorname{tg}45^\circ=1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Je číslo $91$ prvočíslo? (Lekce 1)
+:::
+
+<details><summary>Řešení</summary>
+
+Ne, $91=7\cdot13$. $\blacksquare$
+
+</details>

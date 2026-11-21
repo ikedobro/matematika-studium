@@ -1,0 +1,194 @@
+---
+title: "Lekce 11: čtverce a nerovnosti"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Úlohy 1 až 4 jsou návodné úlohy k poslední, skutečné úloze Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="čtverec je nezáporný"}
+Pro každé reálné číslo $t$ je $t^2\ge0$, a rovnost nastane právě když $t=0$. Proto je $(x-m)^2+k\ge k$, s rovností pro $x=m$.
+:::
+
+::: {.problem data-n="1"}
+Určete nejmenší hodnotu výrazu $V=5+(x-2)^2$, $x\in\mathbb R$, a pro které $x$ ji nabývá.
+:::
+
+<details><summary>Řešení</summary>
+
+$(x-2)^2\ge0$, tedy $V\ge5$, rovnost pro $x=2$. Minimum je $5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Určete nejmenší hodnotu výrazu $W=9-ab$, kde $a,b$ jsou reálná čísla s $a+b=6$, a pro které $a,b$ ji nabývá.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte $b=6-a$ a upravte na čtverec.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$W=9-a(6-a)=a^2-6a+9=(a-3)^2\ge0$. Minimum $0$ pro $a=b=3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Určete nejmenší hodnotu výrazu $Y=12-ab$ při $a+b=6$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Porovnejte s úlohou 2.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$Y=3+(9-ab)=3+W\ge3$. Minimum $3$ pro $a=b=3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Určete největší hodnotu výrazu $K=5+ab$ při $a+b=8$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte $b=8-a$. Doplňte na čtverec: $8a-a^2=-(a-4)^2+16$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$K=5+8a-a^2=-(a-4)^2+21\le21$. Maximum $21$ pro $a=b=4$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Řešte soustavu $a+3b+c=6$, $-a+b-c=2$. Dokažte, že $b=2$ a $c=-a$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Sečtěte obě rovnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Součet: $4b=8$, $b=2$. Dosazením do první: $a+6+c=6$, tedy $c=-a$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Pro $b=2$ a $c=-a$ upravte $V=(a-b)^2+(b-c)^2+(c-a)^2$ na jediný výraz v $a$.
+:::
+
+<details><summary>Nápověda</summary>
+
+$(b-c)=2+a$, $(c-a)=-2a$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$V=(a-2)^2+(2+a)^2+(-2a)^2=a^2-4a+4+a^2+4a+4+4a^2=6a^2+8$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Dokažte, že pro reálná $a,b$ platí $a^2+b^2\ge2ab$, a kdy nastane rovnost.
+:::
+
+<details><summary>Řešení</summary>
+
+$a^2+b^2-2ab=(a-b)^2\ge0$. Rovnost pro $a=b$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dokažte, že pro reálná $a,b,c$ platí $a^2+b^2+c^2\ge ab+bc+ca$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Sečtěte úlohu 7 pro dvojice $(a,b)$, $(b,c)$, $(c,a)$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$a^2+b^2\ge2ab$, $b^2+c^2\ge2bc$, $c^2+a^2\ge2ca$. Součet: $2(a^2+b^2+c^2)\ge2(ab+bc+ca)$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Dokažte, že pro každé $x>0$ je $x+\dfrac1x\ge2$.
+:::
+
+<details><summary>Řešení</summary>
+
+$x+\frac1x-2=\frac{x^2-2x+1}x=\frac{(x-1)^2}x\ge0$ pro $x>0$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Určete, jaké nejmenší hodnoty může nabýt výraz $V=(a-b)^2+(b-c)^2+(c-a)^2$, splňují-li reálná čísla $a,b,c$ dvojici podmínek $a+3b+c=6$, $-a+b-c=2$.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, 63. ročník, úloha 1 (matematickaolympiada.cz, soubor c63in.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 5 a 6, potom definici 1.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 5 je $b=2$, $c=-a$. Podle úlohy 6 je $V=6a^2+8$. Protože $a^2\ge0$, je $V\ge8$, rovnost pro $a=0$, tedy $c=0$, $b=2$. Kontrola: $0+6+0=6$ a $-0+2-0=2$. Minimum je $8$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Součet prvních $n$ členů geometrické posloupnosti s $g_1=3$, $q=2$, $n=4$. (Lekce 10)
+:::
+
+<details><summary>Řešení</summary>
+
+$3\cdot\frac{2^4-1}{2-1}=45$ ($3+6+12+24$). $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Ve čtverci $ABCD$ je $K$ střed $AB$. Který z trojúhelníků $AKD$ a $KBC$ má větší obsah? (Lekce 8, použijte stranu $s$)
+:::
+
+<details><summary>Řešení</summary>
+
+$S_{AKD}=\frac12\cdot\frac s2\cdot s=\frac{s^2}4$, $S_{KBC}=\frac12\cdot\frac s2\cdot s=\frac{s^2}4$. Jsou stejné. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Z osudí s $4$ červenými a $2$ bílými táhneme dvě kuličky najednou. Pravděpodobnost, že jsou obě bílé? (Lekce 6)
+:::
+
+<details><summary>Řešení</summary>
+
+$\dfrac{\binom22}{\binom62}=\dfrac1{15}$. $\blacksquare$
+
+</details>

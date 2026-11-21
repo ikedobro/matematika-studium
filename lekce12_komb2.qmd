@@ -1,0 +1,194 @@
+---
+title: "Lekce 12: kombinatorika a parita"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="parita součinu"}
+Číslo je *sudé*, je-li dělitelné dvěma, jinak *liché*. Součin je sudý právě když je aspoň jeden činitel sudý.
+:::
+
+::: {.problem data-n="1"}
+Dokažte tvrzení z definice 1 pro součin tří čísel.
+:::
+
+<details><summary>Nápověda</summary>
+
+Je-li jeden činitel $2k$, vytkněte $2$. Jsou-li všechny liché, co je součin dvou lichých čísel?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Je-li jeden činitel sudý, je součin násobkem dvou. Jsou-li všechny liché, platí $(2a+1)(2b+1)=4ab+2a+2b+1$, což je liché, a stejně součin s dalším lichým číslem. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Kolika způsoby lze z $8$ vrcholů krychle vybrat $4$ vrcholy (bez ohledu na pořadí)?
+:::
+
+<details><summary>Řešení</summary>
+
+$\binom84=\frac{8\cdot7\cdot6\cdot5}{24}=70$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Kolika způsoby lze vrcholům čtverce $ABCD$ přiřadit čísla $1,2,3,4$ tak, aby součet čísel na každé straně byl lichý?
+:::
+
+<details><summary>Nápověda</summary>
+
+Součet dvou čísel je lichý, právě když mají různou paritu. Jak se musí parity střídat kolem čtverce?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Sousední vrcholy mají různou paritu, parity se střídají: $A,C$ liché a $B,D$ sudé, nebo naopak. To jsou $2$ vzorce. V každém lichá čísla $1,3$ umístíme $2!$ způsoby a sudá $2,4$ také $2!$ způsoby. Celkem $2\cdot2\cdot2=8$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Kolika způsoby lze vrcholům čtverce $ABCD$ a jeho středu $S$ přiřadit čísla $1,2,3,4,5$ tak, aby byly součty čísel u každé strany i u obou úhlopříček lichými? (Úhlopříčka = dva vrcholy a střed.)
+:::
+
+<details><summary>Nápověda</summary>
+
+Rozhodněte nejdřív o paritách. Čísla $1,3,5$ jsou lichá, $2,4$ sudá. Kolik vzorců parit vyhovuje?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Sousední vrcholy mají různou paritu, takže $A,C$ mají jednu paritu a $B,D$ druhou. Lichých čísel jsou tři, sudých dvě. Má-li $S$ sudou paritu, jsou liché jen dva vrcholy, nelze přiřadit tři lichá čísla. Proto $S$ je liché a $A,C$ nebo $B,D$ jsou liché (druhá dvojice sudá). Součet $A+S+C$ je lichý (liché + liché + liché nebo sudé + liché + sudé), a stejně druhá úhlopříčka. Jsou $2$ vzorce parit. Lichá čísla se umístí $3!=6$ způsoby, sudá $2$ způsoby. Celkem $2\cdot6\cdot2=24$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Kolik vrcholů má stěna krychle? V kolika stěnách leží každý vrchol? Kolik je stěn?
+:::
+
+<details><summary>Řešení</summary>
+
+Stěna má $4$ vrcholy, každý vrchol leží ve $3$ stěnách, stěn je $6$. Zkouška: $6\cdot4=8\cdot3=24$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Z vrcholů krychle je vybráno $4$ tak, že žádná stěna neobsahuje více než dva z nich. Dokažte, že každá stěna obsahuje právě dva.
+:::
+
+<details><summary>Nápověda</summary>
+
+Spočtěte dvojicemi (vybraný vrchol, stěna obsahující ho). Jednou podle vrcholů, jednou podle stěn.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Každý ze $4$ vybraných vrcholů leží ve $3$ stěnách, dvojic je $4\cdot3=12$. Stěn je $6$ a každá obsahuje nejvýše $2$ vybrané, dvojic je tedy nejvýše $6\cdot2=12$. Rovnost nastane jen když každá stěna obsahuje právě $2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Najděte všechny čtveřice vrcholů krychle, v nichž každá stěna obsahuje právě dva vybrané vrcholy. Kolik jich je?
+:::
+
+<details><summary>Nápověda</summary>
+
+Označte vrcholy trojicemi $(x,y,z)$ z $\{0,1\}$. Svislé „sloupce“ jsou dvojice se stejným $(x,y)$. Označte $c_{ab}$ počet vybraných ve sloupci $(a,b)$. Stěny $x=0$, $x=1$, $y=0$, $y=1$ dávají čtyři rovnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Stěna $x=0$ má dva vybrané: $c_{00}+c_{01}=2$. Podobně $c_{10}+c_{11}=2$, $c_{00}+c_{10}=2$, $c_{01}+c_{11}=2$. Odtud $c_{00}=c_{11}=t$ a $c_{01}=c_{10}=2-t$, $t\in\{0,1,2\}$.
+
+- $t=2$: vybereme oba vrcholy sloupců $(0,0)$ a $(1,1)$: 1 čtveřice.
+- $t=0$: oba vrcholy sloupců $(0,1)$ a $(1,0)$: 1 čtveřice.
+- $t=1$: z každého ze čtyř sloupců jeden vrchol, přitom v rovině $z=0$ musí být právě dva: $\binom42=6$ čtveřic.
+
+Stěny $z=0$ a $z=1$ jsou v případech $t=0,2$ splněny samy, v případě $t=1$ je splní podmínka „právě dva s $z=0$“. Dohromady $8$ čtveřic. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+V každé z osmi čtveřic z úlohy 7 ukažte, na kolik způsobů lze rozmístit čísla $1,3,3,3$ do čtyř vybraných vrcholů (čtyřky na zbylé vrcholy).
+:::
+
+<details><summary>Řešení</summary>
+
+Trojky jsou stejné, rozhoduje jen, který z vybraných vrcholů dostane číslo $1$: $4$ způsoby. Čtyřky jsou stejné a jdou na zbylé vrcholy jednoznačně. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Kolika způsoby lze do vrcholů krychle napsat čtyři jedničky a čtyři dvojky tak, aby součet čísel na každé stěně byl $6$?
+:::
+
+<details><summary>Řešení</summary>
+
+Má-li stěna $k$ jedniček, je součet $k+2(4-k)=8-k=6$, tedy $k=2$. Každá stěna má právě dvě jedničky. Podle úlohy 7 je takových čtveřic $8$ a dvojky jdou na zbytek. Odpověď $8$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Určete, kolika způsoby lze k jednotlivým vrcholům krychle $ABCDEFGH$ připsat čísla $1,3,3,3,4,4,4,4$ tak, aby součin čísel připsaných libovolným třem vrcholům každé ze stěn krychle byl sudý.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, návody k úloze 2 (matematickaolympiada.cz, soubor c65i-n.pdf; ročník neověřen).
+:::
+
+<details><summary>Nápověda</summary>
+
+Lichá čísla jsou čtyři ($1,3,3,3$). Podle úlohy 1 nesmí na stěně ležet tři lichá. Použijte úlohy 6, 7 a 8.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Součin tří vrcholů stěny je sudý právě když mezi nimi je aspoň jedno sudé číslo (úloha 1). Stěna tedy nemá tři lichá, má jich nejvýše dvě. Čtyři lichá čísla jsou čtyři vrcholy, podle úlohy 6 jich má každá stěna právě dva. Podle úlohy 7 je takových čtveřic $8$, podle úlohy 8 je v každé $4$ způsoby, kam dát číslo $1$. Počet způsobů je $8\cdot4=32$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Nejmenší hodnota výrazu $x^2-6x+11$. (Lekce 11)
+:::
+
+<details><summary>Řešení</summary>
+
+$(x-3)^2+2\ge2$. Minimum $2$ pro $x=3$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+$0{,}666\dots$ zlomkem. (Lekce 10)
+:::
+
+<details><summary>Řešení</summary>
+
+$\frac{0{,}6}{1-0{,}1}=\frac23$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Jsou prvočísla $p$ a $p+2$ a $p+4$ současně, $p>3$? (Lekce 1)
+:::
+
+<details><summary>Řešení</summary>
+
+Mezi třemi po sobě jdoucími lichými čísly $p,p+2,p+4$ je jedno dělitelné třemi. Jedině $p=3$ ($3,5,7$). Pro $p>3$ ne. $\blacksquare$
+
+</details>

@@ -1,0 +1,92 @@
+---
+title: "Diagnostický test"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Patnáct krátkých úloh ze střední matematiky. Cíl není známka, ale zjistit, co umíš a co ne. Bez kalkulačky a bez pomůcek, asi 45 minut.
+
+::: poznamka
+Neumíš-li úlohu, nech ji prázdnou a nehádej. Prázdné místo je pro nás užitečnější než náhodná odpověď. U každé úlohy si na papír napiš, zda to šlo hned, po přemýšlení, nebo vůbec.
+:::
+
+## Rovnice a nerovnice
+
+::: {.problem data-n="1"}
+Řešte v $\mathbb R$ nerovnici $x^2-5x+6\le0$.
+:::
+
+::: {.problem data-n="2"}
+Řešte v $\mathbb R$ nerovnici $\dfrac{x+1}{x-2}>0$.
+:::
+
+## Funkce
+
+::: {.problem data-n="3"}
+Určete definiční obor funkce $f(x)=\dfrac{\sqrt{x+3}}{x-1}$.
+:::
+
+## Trigonometrie
+
+::: {.problem data-n="4"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $2\sin x=1$.
+:::
+
+::: {.problem data-n="5"}
+Je dáno $\sin x=\frac35$ a $x\in\left(\frac\pi2,\pi\right)$. Určete $\cos x$ a $\operatorname{tg}x$.
+:::
+
+## Posloupnosti
+
+::: {.problem data-n="6"}
+Určete a) součet prvních $20$ členů aritmetické posloupnosti s $a_1=5$ a $d=3$; b) součet nekonečné řady $1+\frac12+\frac14+\frac18+\dots$
+:::
+
+## Kombinatorika a pravděpodobnost
+
+::: {.problem data-n="7"}
+Z $8$ žáků vybíráme trojici do družstva. Kolika způsoby to lze udělat?
+:::
+
+::: {.problem data-n="8"}
+Kolik existuje čtyřciferných lichých čísel, jejichž číslice jsou z množiny $\{1,2,3,4,5\}$ a žádná se neopakuje?
+:::
+
+::: {.problem data-n="9"}
+Hodíme dvěma spravedlivými kostkami. Jaká je pravděpodobnost, že součet padlých čísel je $8$?
+:::
+
+## Analytická geometrie
+
+::: {.problem data-n="10"}
+Napište rovnici přímky procházející body $A[1,2]$ a $B[4,-1]$.
+:::
+
+::: {.problem data-n="11"}
+Určete střed a poloměr kružnice $x^2+y^2-4x+6y-12=0$.
+:::
+
+## Derivace a integrál
+
+::: {.problem data-n="12"}
+Zderivujte $f(x)=x^3\sin x$.
+:::
+
+::: {.problem data-n="13"}
+Najděte lokální extrémy funkce $f(x)=x^3-3x$.
+:::
+
+::: {.problem data-n="14"}
+Vypočtěte $\displaystyle\int_0^2(3x^2+1)\,\mathrm dx$.
+:::
+
+## Planimetrie
+
+::: {.problem data-n="15"}
+Pravoúhlý trojúhelník má odvěsny délek $6$ a $8$. Určete poloměr kružnice do něj vepsané.
+:::

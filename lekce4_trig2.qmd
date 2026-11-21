@@ -1,0 +1,205 @@
+---
+title: "Lekce 4: jednotková kružnice a goniometrické rovnice"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Bez kalkulačky. Navazuje na lekci 3.
+
+::: {.definition data-n="1" data-name="jednotková kružnice"}
+Na kružnici o poloměru $1$ se středem v počátku označme $P$ bod, který vznikne otočením bodu $[1,0]$ o úhel $x$ proti směru hodinových ručiček. *Kosinus* $\cos x$ je první a *sinus* $\sin x$ druhá souřadnice bodu $P$. Pro ostrý úhel souhlasí s definicí z lekce 3. Je $\operatorname{tg}x=\frac{\sin x}{\cos x}$, pokud $\cos x\ne0$.
+:::
+
+::: {.definition data-n="2" data-name="radián"}
+Úhel $180^\circ$ se rovná $\pi$ radiánů. Tedy $1^\circ=\frac\pi{180}$ rad.
+:::
+
+::: {.problem data-n="1"}
+Převeďte na radiány: $90^\circ$, $60^\circ$, $45^\circ$, $30^\circ$. Převeďte na stupně: $\frac{5\pi}6$, $\frac{3\pi}2$.
+:::
+
+<details><summary>Řešení</summary>
+
+$90^\circ=\frac\pi2$, $60^\circ=\frac\pi3$, $45^\circ=\frac\pi4$, $30^\circ=\frac\pi6$. $\frac{5\pi}6=150^\circ$, $\frac{3\pi}2=270^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Určete $\sin x$ a $\cos x$ pro $x=0$, $\frac\pi2$, $\pi$, $\frac{3\pi}2$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Kam se dostane bod $[1,0]$ po otočení o tyto úhly? Přečtěte souřadnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Body jsou $[1,0]$, $[0,1]$, $[-1,0]$, $[0,-1]$. Tedy $(\cos,\sin)$ je $(1,0)$, $(0,1)$, $(-1,0)$, $(0,-1)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Dokažte, že $\sin(\pi-x)=\sin x$ a $\cos(\pi-x)=-\cos x$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Bod pro úhel $\pi-x$ vznikne z bodu pro úhel $x$ zrcadlením podle svislé osy.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Zrcadlení podle osy $y$ mění $[u,v]$ na $[-u,v]$. Zrcadlí se úhel $x$ na úhel $\pi-x$. Z $P=[\cos x,\sin x]$ tak dostaneme $[-\cos x,\sin x]$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Určete $\sin150^\circ$, $\cos150^\circ$, $\sin135^\circ$, $\cos120^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohu 3 a hodnoty z lekce 3. Například $150^\circ=180^\circ-30^\circ$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\sin150^\circ=\sin30^\circ=\frac12$, $\cos150^\circ=-\cos30^\circ=-\frac{\sqrt3}2$, $\sin135^\circ=\sin45^\circ=\frac{\sqrt2}2$, $\cos120^\circ=-\cos60^\circ=-\frac12$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+V kterých kvadrantech je $\sin x>0$? V kterých je $\cos x<0$?
+:::
+
+<details><summary>Řešení</summary>
+
+$\sin x$ je druhá souřadnice, kladná pro body nad osou $x$: I. a II. kvadrant. $\cos x$ je první souřadnice, záporná pro body vlevo od osy $y$: II. a III. kvadrant. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Je $\sin x=\frac35$ a $x\in\left(\frac\pi2,\pi\right)$. Určete $\cos x$ a $\operatorname{tg}x$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Z $\sin^2x+\cos^2x=1$ dostanete $\cos^2x$. Znaménko určuje kvadrant (úloha 5).
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\cos^2x=1-\frac9{25}=\frac{16}{25}$. Ve II. kvadrantu je $\cos x<0$, tedy $\cos x=-\frac45$. Pak $\operatorname{tg}x=\frac{3/5}{-4/5}=-\frac34$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $\sin x=\frac12$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Jeden kořen je v I. kvadrantu. Druhý získáte z úlohy 3.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$x=\frac\pi6$ a podle úlohy 3 také $x=\pi-\frac\pi6=\frac{5\pi}6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $2\cos x=\sqrt3$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Kosinus je kladný v I. a IV. kvadrantu. Čtvrtý kvadrant je zrcadlový podle osy $x$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\cos x=\frac{\sqrt3}2$, tedy $x=\frac\pi6$ nebo (zrcadlení podle osy $x$) $x=2\pi-\frac\pi6=\frac{11\pi}6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="9"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $\sin x=-\frac12$.
+:::
+
+<details><summary>Řešení</summary>
+
+Sinus je záporný v III. a IV. kvadrantu. Referenční úhel je $\frac\pi6$. Tedy $x=\pi+\frac\pi6=\frac{7\pi}6$ nebo $x=2\pi-\frac\pi6=\frac{11\pi}6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="10"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $\sin x=\cos x$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Kde jsou obě souřadnice bodu stejné? Nebo vydělte $\cos x$, ale nejdřív ověřte, že $\cos x\ne0$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Pro $\cos x=0$ je $\sin x=\pm1\ne0$, takže $\cos x\ne0$ a smíme dělit: $\operatorname{tg}x=1$. Tedy $x=\frac\pi4$ nebo $x=\frac{5\pi}4$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="11"}
+Řešte v intervalu $\langle0,2\pi)$ rovnici $2\sin^2x-\sin x-1=0$.
+:::
+
+<details><summary>Řešení</summary>
+
+Substituce $t=\sin x$: $2t^2-t-1=0$, $(2t+1)(t-1)=0$, $t=1$ nebo $t=-\frac12$. Pro $\sin x=1$ je $x=\frac\pi2$. Pro $\sin x=-\frac12$ je podle úlohy 9 $x=\frac{7\pi}6$ nebo $\frac{11\pi}6$. $\blacksquare$
+
+</details>
+
+## Trénink: jednotková kružnice zpaměti
+
+::: poznamka
+Pomůcka: v I. kvadrantu jsou hodnoty z lekce 3. Ostatní se získají zrcadlením (úloha 3) a znaménky z kvadrantů. Nakreslete si kružnici a body vždy zakreslete.
+:::
+
+::: {.problem .bez data-n="T1"}
+Vyplňte z hlavy tabulku $\sin x$, $\cos x$ pro $x=0,\frac\pi6,\frac\pi4,\frac\pi3,\frac\pi2,\frac{2\pi}3,\frac{3\pi}4,\frac{5\pi}6,\pi$.
+:::
+
+<details><summary>Řešení</summary>
+
+| $x$ | $0$ | $\frac\pi6$ | $\frac\pi4$ | $\frac\pi3$ | $\frac\pi2$ | $\frac{2\pi}3$ | $\frac{3\pi}4$ | $\frac{5\pi}6$ | $\pi$ |
+|---|---|---|---|---|---|---|---|---|---|
+| $\sin x$ | $0$ | $\frac12$ | $\frac{\sqrt2}2$ | $\frac{\sqrt3}2$ | $1$ | $\frac{\sqrt3}2$ | $\frac{\sqrt2}2$ | $\frac12$ | $0$ |
+| $\cos x$ | $1$ | $\frac{\sqrt3}2$ | $\frac{\sqrt2}2$ | $\frac12$ | $0$ | $-\frac12$ | $-\frac{\sqrt2}2$ | $-\frac{\sqrt3}2$ | $-1$ |
+
+</details>
+
+::: {.problem .bez data-n="T2"}
+Určete: a) $\sin\frac{5\pi}6$; b) $\cos\frac{2\pi}3$; c) $\sin\frac{3\pi}4$; d) $\cos\pi$; e) $\sin\frac{7\pi}6$; f) $\cos\frac{5\pi}4$; g) $\operatorname{tg}\frac{3\pi}4$; h) $\sin\frac{11\pi}6$.
+:::
+
+<details><summary>Řešení</summary>
+
+a) $\frac12$. b) $-\frac12$. c) $\frac{\sqrt2}2$. d) $-1$. e) $-\frac12$. f) $-\frac{\sqrt2}2$. g) $-1$. h) $-\frac12$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="T3"}
+Za dva dny a za týden: tabulku T1 a úlohy T2 zopakujte z hlavy bez pohledu. Chyby napište do sešitu.
+:::

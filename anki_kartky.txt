@@ -1,0 +1,58 @@
+#separator:tab
+#html:true
+#tags column:3
+\(\sin30^\circ\)	\(\frac12\)	trig
+\(\sin45^\circ\)	\(\frac{\sqrt2}2\)	trig
+\(\sin60^\circ\)	\(\frac{\sqrt3}2\)	trig
+\(\cos30^\circ\)	\(\frac{\sqrt3}2\)	trig
+\(\cos45^\circ\)	\(\frac{\sqrt2}2\)	trig
+\(\cos60^\circ\)	\(\frac12\)	trig
+\(\operatorname{tg}30^\circ,\ \operatorname{tg}45^\circ,\ \operatorname{tg}60^\circ\)	\(\frac{\sqrt3}3,\ 1,\ \sqrt3\)	trig
+\(\sin^2x+\cos^2x\)	\(1\)	trig
+\(\operatorname{tg}x\) pomocí \(\sin\), \(\cos\)	\(\frac{\sin x}{\cos x}\)	trig
+\(\sin(\pi-x)\), \(\cos(\pi-x)\)	\(\sin x\), \(-\cos x\)	trig
+\(\sin(90^\circ-\alpha)\)	\(\cos\alpha\)	trig
+\(\sin x\) a \(\cos x\) pro \(x=0,\frac\pi2,\pi,\frac{3\pi}2\)	sin: 0, 1, 0, −1; cos: 1, 0, −1, 0	trig
+\(\pi\) radiánů ve stupních	\(180^\circ\)	trig
+V kterých kvadrantech je \(\sin x>0\)? \(\cos x>0\)?	sin: I, II; cos: I, IV	trig
+Pomůcka pro sin 30°, 45°, 60°	\(\frac{\sqrt1}2,\frac{\sqrt2}2,\frac{\sqrt3}2\); cos opačně	trig
+\(n!\)	\(n(n-1)\cdots2\cdot1\), \(0!=1\)	komb
+\(\binom nk\)	\(\frac{n!}{k!(n-k)!}\), pořadí nezáleží	komb
+Počet uspořádaných výběrů \(k\) z \(n\) (variace)	\(n(n-1)\cdots(n-k+1)\)	komb
+Permutace s opakováním (\(n\) prvků, \(a\) stejných)	\(\frac{n!}{a!}\)	komb
+\(P(A)\)	příznivé / všechny (stejně možné výsledky)	pravd
+\(P(A')\)	\(1-P(A)\)	pravd
+Nezávislé jevy: \(P(A\text{ a }B)\)	\(P(A)P(B)\)	pravd
+Obsah trojúhelníku s kružnicí vepsanou	\(S=rs\), \(s=\frac{a+b+c}2\)	plan
+Pravoúhlý trojúhelník: \(r\)	\(\frac{a+b-c}2\)	plan
+Pravoúhlý trojúhelník: poloměr opsané	\(\frac c2\)	plan
+Tečné úsečky z bodu ke kružnici	stejně dlouhé; z vrcholu \(A\) je to \(s-a\)	plan
+Euklidovy věty (výška \(v\), úseky \(c_a,c_b\))	\(a^2=c\,c_b\), \(b^2=c\,c_a\), \(v^2=c_ac_b\)	plan
+Podobnost s koeficientem \(k\): obsahy	\(k^2\)	plan
+\(a_n\) aritmetické, součet \(s_n\)	\(a_1+(n-1)d\); \(s_n=\frac{n(a_1+a_n)}2\)	posl
+\(g_n\) geometrické, součet \(s_n\)	\(g_1q^{n-1}\); \(s_n=g_1\frac{q^n-1}{q-1}\)	posl
+Nekonečná geometrická řada, \(\lvert q\rvert<1\)	\(\frac{g_1}{1-q}\)	posl
+\(a,b,c\) aritmetická / geometrická	\(2b=a+c\) / \(b^2=ac\)	posl
+\(a^2-b^2\)	\((a-b)(a+b)\)	alg
+\((a\pm b)^2\)	\(a^2\pm2ab+b^2\)	alg
+\(a^2+b^2\ge\)	\(2ab\), rovnost pro \(a=b\)	alg
+Vzdálenost bodů \(A,B\)	\(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}\)	anal
+Střed úsečky \(AB\)	\(\left[\frac{x_1+x_2}2,\frac{y_1+y_2}2\right]\)	anal
+Směrnice přímky \(AB\)	\(\frac{y_2-y_1}{x_2-x_1}\)	anal
+Rovnoběžné / kolmé přímky	\(k_1=k_2\) / \(k_1k_2=-1\)	anal
+Rovnice kružnice	\((x-m)^2+(y-n)^2=r^2\)	anal
+Vzdálenost bodu od přímky \(ax+by+c=0\)	\(\frac{\lvert ax_0+by_0+c\rvert}{\sqrt{a^2+b^2}}\)	anal
+\((c)'\), \((x^n)'\)	\(0\), \(nx^{n-1}\)	deriv
+\((\sin x)'\), \((\cos x)'\)	\(\cos x\), \(-\sin x\)	deriv
+\((e^x)'\), \((\ln x)'\)	\(e^x\), \(\frac1x\)	deriv
+\((\sqrt x)'\)	\(\frac1{2\sqrt x}\)	deriv
+\((fg)'\)	\(f'g+fg'\)	deriv
+\(\left(\frac fg\right)'\)	\(\frac{f'g-fg'}{g^2}\)	deriv
+\((f(g(x)))'\)	\(f'(g(x))\cdot g'(x)\)	deriv
+Rovnice tečny v \(x_0\)	\(y-f(x_0)=f'(x_0)(x-x_0)\)	deriv
+Lokální extrém: podmínka	\(f'(x_0)=0\); \(f''<0\) maximum, \(f''>0\) minimum	deriv
+\(\int x^n\,dx\)	\(\frac{x^{n+1}}{n+1}+C\), \(n\ne-1\)	integ
+\(\int\sin x\,dx\), \(\int\cos x\,dx\)	\(-\cos x+C\), \(\sin x+C\)	integ
+\(\int e^x\,dx\), \(\int\frac1x\,dx\)	\(e^x+C\), \(\ln\lvert x\rvert+C\)	integ
+\(\int_a^bf(x)\,dx\)	\(F(b)-F(a)\)	integ
+Obsah mezi grafy \(g\ge h\) na \(\langle a,b\rangle\)	\(\int_a^b(g-h)\,dx\)	integ

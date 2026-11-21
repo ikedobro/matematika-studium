@@ -1,0 +1,188 @@
+---
+title: "Lekce 14: analytická geometrie, kružnice"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si souřadnice. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Navazuje na lekci 13. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="rovnice kružnice"}
+Kružnice se středem $S[m,n]$ a poloměrem $r$ je množina bodů $[x,y]$ ve vzdálenosti $r$ od $S$:
+$$(x-m)^2+(y-n)^2=r^2.$$
+Roznásobením vznikne obecný tvar $x^2+y^2+px+qy+c=0$. Zpět se vrátíme *doplněním na čtverec*.
+:::
+
+::: {.problem data-n="1"}
+Napište rovnici kružnice se středem $S[2,-3]$ a poloměrem $5$.
+:::
+
+<details><summary>Řešení</summary>
+
+$(x-2)^2+(y+3)^2=25$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Určete střed a poloměr kružnice $x^2+y^2-4x+6y-12=0$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Seskupte $x^2-4x$ a $y^2+6y$ a doplňte každé na čtverec: $x^2-4x=(x-2)^2-4$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(x-2)^2-4+(y+3)^2-9-12=0$, tedy $(x-2)^2+(y+3)^2=25$. $S[2,-3]$, $r=5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Určete střed a poloměr kružnice $x^2+y^2+2x-4y+1=0$.
+:::
+
+<details><summary>Řešení</summary>
+
+$(x+1)^2-1+(y-2)^2-4+1=0$, tedy $(x+1)^2+(y-2)^2=4$. $S[-1,2]$, $r=2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Leží bod $A[5,1]$ na kružnici z úlohy 2?
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte do rovnice, nebo spočtěte vzdálenost od středu.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(5-2)^2+(1+3)^2=9+16=25$. Ano, leží. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Napište rovnici kružnice procházející body $[0,0]$, $[4,0]$, $[0,2]$.
+:::
+
+<details><summary>Nápověda</summary>
+
+V počátku je pravý úhel. Použijte Thaletovu větu z lekce 7: střed leží ve středu přepony.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Trojúhelník s vrcholy $O$, $[4,0]$, $[0,2]$ je pravoúhlý s pravým úhlem v $O$. Střed je střed přepony: $[2,1]$. $r=\sqrt{2^2+1^2}=\sqrt5$. Rovnice $(x-2)^2+(y-1)^2=5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Najděte průsečíky kružnice $x^2+y^2=25$ s přímkou $y=x+1$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dosaďte $y$ do rovnice kružnice. Vznikne kvadratická rovnice.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$x^2+(x+1)^2=25$, $2x^2+2x-24=0$, $x^2+x-12=0$, $(x-3)(x+4)=0$. $x=3$: $y=4$. $x=-4$: $y=-3$. Průsečíky $[3,4]$ a $[-4,-3]$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Pro které $c$ je přímka $y=x+c$ tečnou kružnice $x^2+y^2=8$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Tečna má s kružnicí právě jeden společný bod. Dosaďte a požadujte, aby kvadratická rovnice měla diskriminant nula.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$x^2+(x+c)^2=8$, $2x^2+2cx+c^2-8=0$. Diskriminant $4c^2-8(c^2-8)=64-4c^2=0$, tedy $c=\pm4$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Napište rovnici tečny ke kružnici $x^2+y^2=25$ v bodě $T[3,4]$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Tečna je kolmá na poloměr $OT$. Směrnice $OT$ je $\frac43$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$k_{OT}=\frac43$, směrnice tečny $-\frac34$. $y-4=-\frac34(x-3)$, tedy $3x+4y-25=0$. Kontrola: $9+16-25=0$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Kružnice se středem $[1,1]$ se dotýká přímky $x+y-8=0$. Napište její rovnici.
+:::
+
+<details><summary>Řešení</summary>
+
+Poloměr je vzdálenost středu od přímky (lekce 13, definice 4): $r=\frac{|1+1-8|}{\sqrt2}=\frac6{\sqrt2}=3\sqrt2$. $r^2=18$. $(x-1)^2+(y-1)^2=18$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="10"}
+Kružnice má střed na přímce $y=x$ a prochází body $A[0,0]$ a $B[2,0]$. Napište její rovnici.
+:::
+
+<details><summary>Řešení</summary>
+
+Střed $[m,m]$. Vzdálenosti od $A$ a $B$ jsou stejné: $m^2+m^2=(m-2)^2+m^2$, tedy $m^2=(m-2)^2$, $m=1$. Střed $[1,1]$, $r^2=2$. $(x-1)^2+(y-1)^2=2$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Napište rovnici přímky procházející $A[1,2]$, $B[4,-1]$. (Lekce 13)
+:::
+
+<details><summary>Řešení</summary>
+
+$x+y-3=0$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Nejmenší hodnota $x^2-6x+11$. (Lekce 11)
+:::
+
+<details><summary>Řešení</summary>
+
+$(x-3)^2+2$, minimum $2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Součet řady $1+\frac13+\frac19+\dots$ (Lekce 10)
+:::
+
+<details><summary>Řešení</summary>
+
+$\frac1{1-1/3}=\frac32$. $\blacksquare$
+
+</details>

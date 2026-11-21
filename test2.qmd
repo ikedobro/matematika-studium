@@ -1,0 +1,76 @@
+---
+title: "Kontrolní test"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Patnáct úloh z témat lekcí 1 až 12. Bez kalkulačky a bez pomůcek, asi 45 minut. Neumíš-li úlohu, nech ji prázdnou a nehádej.
+
+::: poznamka
+Test se píše po dokončení lekcí 1 až 12. Výsledek ukáže, co zůstalo v hlavě. Chyby si zapiš do sešitu a vrať se k příslušné lekci.
+:::
+
+::: {.problem data-n="1"}
+Řešte v $\mathbb R$: $x^2-7x+10\le0$.
+:::
+
+::: {.problem data-n="2"}
+Řešte v $\mathbb R$: $\dfrac{x-3}{x+1}>0$.
+:::
+
+::: {.problem data-n="3"}
+Určete definiční obor funkce $f(x)=\dfrac{\sqrt{x+2}}{x-4}$.
+:::
+
+::: {.problem data-n="4"}
+Řešte v $\langle0,2\pi)$: $\sin x=\dfrac{\sqrt3}2$.
+:::
+
+::: {.problem data-n="5"}
+Je $\cos x=\frac45$ a $x\in\left(\frac{3\pi}2,2\pi\right)$. Určete $\sin x$ a $\operatorname{tg}x$.
+:::
+
+::: {.problem data-n="6"}
+Spočtěte a) součet prvních $15$ členů aritmetické posloupnosti s $a_1=7$, $d=2$; b) $1+\frac13+\frac19+\dots$
+:::
+
+::: {.problem data-n="7"}
+Z $9$ hráčů vybíráme čtveřici. Kolika způsoby?
+:::
+
+::: {.problem data-n="8"}
+Kolik existuje trojciferných sudých čísel s číslicemi z množiny $\{1,2,3,4,5,6\}$ bez opakování?
+:::
+
+::: {.problem data-n="9"}
+Hodíme dvěma kostkami. Pravděpodobnost, že součet je $9$?
+:::
+
+::: {.problem data-n="10"}
+Pravoúhlý trojúhelník má odvěsny $5$ a $12$. Určete poloměr vepsané kružnice.
+:::
+
+::: {.problem data-n="11"}
+V trojúhelníku $ABC$ leží $D$ na $AB$, $E$ na $AC$, $DE\parallel BC$, $AD=4$, $DB=6$, $BC=15$. Určete $DE$.
+:::
+
+::: {.problem data-n="12"}
+Číslo $n$ je součinem dvou prvočísel. Zvětšíme-li každé o $1$, součin se zvětší o $21$. Určete $n$.
+:::
+
+::: {.problem data-n="13"}
+Určete nejmenší hodnotu výrazu $x^2-6x+11$.
+:::
+
+::: {.problem data-n="14"}
+Hodíme třikrát mincí. Pravděpodobnost, že padne alespoň dvakrát líc?
+:::
+
+::: {.problem data-n="15"}
+Spočtěte $\sin120^\circ\cdot\cos150^\circ$.
+:::

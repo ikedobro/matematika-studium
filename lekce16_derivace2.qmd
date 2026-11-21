@@ -1,0 +1,196 @@
+---
+title: "Lekce 16: derivace, tečny a extrémy"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Navazuje na lekci 15. Na konci je opakování, včetně tabulky derivací.
+
+::: {.definition data-n="1" data-name="tečna a monotonie"}
+Tečna ke grafu $f$ v bodě $x_0$ je přímka $y-f(x_0)=f'(x_0)(x-x_0)$. Je-li $f'>0$ na intervalu, je $f$ na něm rostoucí. Je-li $f'<0$, je klesající.
+:::
+
+::: {.definition data-n="2" data-name="lokální extrém"}
+Je-li v bodě $x_0$ lokální extrém, pak $f'(x_0)=0$. Je-li $f'$ v $x_0$ nulová a mění znaménko z $+$ na $-$, je tam lokální maximum, z $-$ na $+$ lokální minimum. Druhá derivace: $f''(x_0)<0$ maximum, $f''(x_0)>0$ minimum.
+:::
+
+::: {.problem data-n="1"}
+Napište rovnici tečny ke grafu $f(x)=x^2$ v bodě $x_0=3$.
+:::
+
+<details><summary>Nápověda</summary>
+
+$f(3)=9$, $f'(x)=2x$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$f'(3)=6$. $y-9=6(x-3)$, tedy $y=6x-9$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Určete intervaly, na kterých je $f(x)=x^3-3x$ rostoucí.
+:::
+
+<details><summary>Nápověda</summary>
+
+$f'(x)=3x^2-3$. Kdy je kladná?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$f'(x)=3(x-1)(x+1)>0$ pro $x<-1$ nebo $x>1$. Rostoucí na $(-\infty,-1)$ a $(1,\infty)$, klesající na $(-1,1)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Najděte lokální extrémy funkce $f(x)=x^3-3x$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Z úlohy 2: kde se mění znaménko $f'$? Dopočtěte hodnoty $f$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$f'=0$ pro $x=\pm1$. $f''=6x$: $f''(-1)=-6<0$ maximum, $f(-1)=2$. $f''(1)=6>0$ minimum, $f(1)=-2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Najděte minimum funkce $f(x)=x^2-4x+5$ pomocí derivace a ověřte doplněním na čtverec.
+:::
+
+<details><summary>Řešení</summary>
+
+$f'=2x-4=0$, $x=2$, $f(2)=1$, $f''=2>0$ minimum. Doplněním: $(x-2)^2+1\ge1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Obvod obdélníku je $20$. Jaké rozměry má obdélník s největším obsahem?
+:::
+
+<details><summary>Nápověda</summary>
+
+Strany $x$ a $10-x$. Obsah $P(x)=x(10-x)$. Maximalizujte.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$P=10x-x^2$, $P'=10-2x=0$, $x=5$. $P''=-2<0$ maximum. Čtverec $5\times5$ s obsahem $25$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Který bod grafu $y=\sqrt x$ je nejblíže bodu $[4,0]$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Minimalizujte čtverec vzdálenosti $d^2=(x-4)^2+(\sqrt x)^2=(x-4)^2+x$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$g(x)=(x-4)^2+x$, $g'=2(x-4)+1=2x-7=0$, $x=\frac72$. $g''=2>0$ minimum. Bod $\left[\frac72,\sqrt{\frac72}\right]$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Určete největší a nejmenší hodnotu funkce $f(x)=x^3-12x$ na intervalu $\langle-3,3\rangle$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Porovnejte hodnoty ve stacionárních bodech a v krajních bodech intervalu.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$f'=3x^2-12=0$, $x=\pm2$. $f(-3)=9$, $f(-2)=16$, $f(2)=-16$, $f(3)=-9$. Maximum $16$, minimum $-16$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Najděte lokální maximum funkce $f(x)=xe^{-x}$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Součin a složená funkce: $(e^{-x})'=-e^{-x}$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$f'=e^{-x}-xe^{-x}=e^{-x}(1-x)$. $f'=0$ pro $x=1$, znaménko $+\to-$: maximum, $f(1)=\frac1e$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Součet dvou kladných čísel je $10$. Kdy je součet jejich druhých mocnin nejmenší?
+:::
+
+<details><summary>Řešení</summary>
+
+$g(x)=x^2+(10-x)^2$, $g'=2x-2(10-x)=4x-20=0$, $x=5$, $g''=4>0$. Obě čísla $5$, součet čtverců $50$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="10"}
+V kterém bodě grafu $f(x)=x^2$ je tečna rovnoběžná s přímkou $y=4x+1$?
+:::
+
+<details><summary>Řešení</summary>
+
+Směrnice tečny $f'(x)=2x$ se rovná $4$: $x=2$, bod $[2,4]$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy. Úlohy R1 a R2 jsou tabulka derivací: je to nejdůležitější věc k zapamatování.
+:::
+
+::: {.problem data-n="R1"}
+Napište z paměti: $(x^n)'$, $(\sin x)'$, $(\cos x)'$, $(e^x)'$, $(\ln x)'$. (Lekce 15)
+:::
+
+<details><summary>Řešení</summary>
+
+$nx^{n-1}$, $\cos x$, $-\sin x$, $e^x$, $\frac1x$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Zderivujte $x^2\sin x$ a $\dfrac{x}{x^2+1}$. (Lekce 15)
+:::
+
+<details><summary>Řešení</summary>
+
+$2x\sin x+x^2\cos x$. $\frac{(x^2+1)-x\cdot2x}{(x^2+1)^2}=\frac{1-x^2}{(x^2+1)^2}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Napište rovnici tečny ke kružnici $x^2+y^2=25$ v bodě $[3,4]$. (Lekce 14)
+:::
+
+<details><summary>Řešení</summary>
+
+$3x+4y-25=0$. $\blacksquare$
+
+</details>
