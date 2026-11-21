@@ -1,0 +1,194 @@
+---
+title: "Lekce 21: dělitelnost a zbytky II"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Navazuje na lekci 1. Poslední úloha je skutečná úloha Matematické olympiády. Úlohy 1, 2 a 9 jsou převzaty z návodných úloh k ní. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="zbytky a dělitelnost"}
+Číslo $n$ dělené číslem $m$ lze zapsat jako $n=mk+r$, kde $r$ je zbytek, $0\le r<m$. Je-li $N$ dělitelné dvěma čísly, která nemají společného prvočinitele, je dělitelné jejich součinem.
+:::
+
+::: {.problem data-n="1"}
+Dokažte, že pro každé celé $n$ je číslo $n^3+2n$ dělitelné třemi.
+:::
+
+<details><summary>Nápověda</summary>
+
+$n^3+2n=n(n^2+2)$. Zbytky $n$ po dělení třemi: v lekci 1 jsme viděli, co dělá $n^2+2$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$n^3+2n=n(n^2+2)$. Je-li $3\mid n$, je součin dělitelný třemi. Jinak je podle lekce 1 (úloha 2) $3\mid n^2+2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte, že pro každé liché $n$ je $n^2-1$ dělitelné osmi.
+:::
+
+<details><summary>Nápověda</summary>
+
+Zapište $n=2k+1$ a rozložte $n^2-1$ na součin. Dvě po sobě jdoucí celá čísla: jedno je sudé.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$n=2k+1$: $n^2-1=4k^2+4k=4k(k+1)$. Z dvou po sobě jdoucích celých čísel $k$, $k+1$ je jedno sudé, takže $k(k+1)$ je sudé a $4k(k+1)$ je dělitelné $8$. Tedy $8\mid n^2-1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Dokažte, že pro liché $n$ lze psát $n^2=8k+1$ pro nějaké celé $k\ge0$.
+:::
+
+<details><summary>Řešení</summary>
+
+Z úlohy 2 je $n^2-1=8k$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Dokažte, že $n^4+2n^2+2013=(n^2+1)^2+2012$.
+:::
+
+<details><summary>Řešení</summary>
+
+$(n^2+1)^2=n^4+2n^2+1$, přičtením $2012$ vznikne $n^4+2n^2+2013$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Je-li $n^2=8k+1$, ukažte, že $(n^2+1)^2+2012=32(2k^2+k+63)$.
+:::
+
+<details><summary>Nápověda</summary>
+
+$n^2+1=8k+2$. Umocněte a přičtěte.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$(8k+2)^2=64k^2+32k+4$. Přičtením $2012$: $64k^2+32k+2016=32(2k^2+k+63)$, protože $2016=32\cdot63$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Dokažte, že pro liché $n$ je číslo $n^4+2n^2+2013$ dělitelné $32$.
+:::
+
+<details><summary>Řešení</summary>
+
+Podle úloh 3, 4 a 5 je rovno $32(2k^2+k+63)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Dokažte, že pro každé celé $n$ je $n^4+2n^2+2013$ dělitelné třemi.
+:::
+
+<details><summary>Nápověda</summary>
+
+$n^4+2n^2=n^2(n^2+2)$. Použijte úlohu 1. Je $2013$ dělitelné třemi?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$n^2(n^2+2)$ je dělitelné třemi: je-li $3\mid n$, tak $3\mid n^2$, jinak $3\mid n^2+2$. Také $2013=3\cdot671$. Součet dělitelných třemi je dělitelný třemi. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dokažte: je-li číslo $N$ dělitelné $32$ i $3$, je dělitelné $96$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Zapište $N=32k$. Prvočíslo $3$ dělí součin $32\cdot k$, ale $32$ nemá dělitele $3$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$N=32k$ a $3\mid32k$. Číslo $32=2^5$ není dělitelné třemi, proto podle jednoznačného rozkladu (lekce 18) musí $3\mid k$, $k=3j$. Pak $N=96j$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Dokažte, že pro každé celé kladné $n$ je rozdíl $n^6-n^2$ dělitelný $60$.
+:::
+
+<details><summary>Řešení</summary>
+
+$n^6-n^2=n^2(n^2-1)(n^2+1)$. Dělitelnost čísly $4$, $3$, $5$:
+
+- $4$: je-li $n$ sudé, $4\mid n^2$. Je-li liché, $8\mid n^2-1$ (úloha 2).
+- $3$: $3\mid n$ nebo $3\mid n^2-1$ (kvadrát má zbytek $0$ nebo $1$, lekce 1).
+- $5$: kvadrát dává po dělení pěti zbytek $0$, $1$ nebo $4$. Pro $0$ dělí pětka $n^2$, pro $1$ dělí $n^2-1$, pro $4$ dělí $n^2+1$.
+
+Čísla $4,3,5$ nemají společného prvočinitele, podle úlohy 8 (stejným postupem) je výraz dělitelný $60$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Dokažte, že pro každé liché přirozené číslo $n$ je součet $n^4+2n^2+2013$ dělitelný číslem $96$.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, 63. ročník, úloha 5 (matematickaolympiada.cz, soubor c63in.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+$96=32\cdot3$. Použijte úlohy 6, 7 a 8.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 6 je součet dělitelný $32$, podle úlohy 7 třemi. Čísla $32$ a $3$ nemají společného prvočinitele, podle úlohy 8 je součet dělitelný $96$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Čtverec s úhlopříčkou $10$: obsah? (Lekce 20)
+:::
+
+<details><summary>Řešení</summary>
+
+$\frac{10^2}2=50$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Najděte nejmenší kladná $a,b$ s $2a^2=3b^3$. (Lekce 18)
+:::
+
+<details><summary>Řešení</summary>
+
+$a=18$, $b=6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Řešte $\sin x=\cos x$ v $\langle0,2\pi)$. (Lekce 4)
+:::
+
+<details><summary>Řešení</summary>
+
+$x=\frac\pi4$, $x=\frac{5\pi}4$. $\blacksquare$
+
+</details>

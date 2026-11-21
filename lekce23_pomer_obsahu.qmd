@@ -1,0 +1,199 @@
+---
+title: "Lekce 23: poměry obsahů a nerovnost"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si obrázek. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Navazuje na lekce 7 a 11. Poslední úloha je skutečná úloha Matematické olympiády. Úloha 1 a úloha 9 jsou převzaty z návodných úloh k ní. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="obsahy trojúhelníků"}
+Obsah trojúhelníku je $\frac12\cdot\text{základna}\cdot\text{výška}$. Vzdálenost bodu od přímky se na úsečce mění rovnoměrně: leží-li bod $D$ na úsečce $EF$ a je $ED:EF=t$, je jeho vzdálenost od přímky $\ell$ rovna $(1-t)d_E+t\,d_F$, kde $d_E,d_F$ jsou vzdálenosti $E$, $F$ od $\ell$.
+:::
+
+::: {.problem data-n="1"}
+Dokažte: a) mají-li dva trojúhelníky stejnou výšku, je poměr jejich obsahů roven poměru základen; b) mají-li dva trojúhelníky shodné základny, je poměr obsahů roven poměru výšek.
+:::
+
+<details><summary>Řešení</summary>
+
+a) $\dfrac{\frac12z_1v}{\frac12z_2v}=\dfrac{z_1}{z_2}$. b) $\dfrac{\frac12zv_1}{\frac12zv_2}=\dfrac{v_1}{v_2}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Bod $E$ leží na přímce $\ell$, bod $F$ je ve vzdálenosti $h$ od ní. Bod $D$ leží na úsečce $EF$ s $ED:DF=2:1$. V jaké vzdálenosti od $\ell$ je $D$?
+:::
+
+<details><summary>Nápověda</summary>
+
+$ED:EF=2:3$. $E$ má vzdálenost $0$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$ED=\frac23EF$, tedy vzdálenost $D$ je $\frac23h$. Obecně pro $ED:DF=p:1$ je to $\frac p{p+1}h$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+V trojúhelníku $ABC$ leží $E$ na $AB$, $F$ na $AC$, $EF\parallel BC$ a $AE:EB=2:3$. Určete $AF:FC$ a $EF:BC$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $AEF$ a $ABC$ jsou podobné (lekce 7). $AE:AB=2:5$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$AE:AB=2:5$. Z podobnosti $AF:AC=2:5$, tedy $AF:FC=2:3$, a $EF:BC=2:5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+V situaci úlohy 3 označme $p=BE:EA$. Dokažte, že $AE:AB=AF:AC=\dfrac1{1+p}$.
+:::
+
+<details><summary>Řešení</summary>
+
+$BE=p\cdot EA$, tedy $AB=AE+EB=(1+p)AE$ a $AE:AB=\frac1{1+p}$. Z podobnosti (úloha 3) totéž pro $AF:AC$. $\blacksquare$
+
+</details>
+
+```{=html}
+<svg viewBox="0 0 270 230" width="270" height="230" style="display:block;margin:1rem auto" role="img" aria-label="Trojúhelník ABC, rovnoběžka EF s BC, bod D na EF">
+  <polygon points="130,20 30,200 240,200" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="90" y1="92" x2="174" y2="92" stroke="#000"/>
+  <line x1="130" y1="20" x2="140.4" y2="92" stroke="#000" stroke-dasharray="4 3"/>
+  <line x1="30" y1="200" x2="140.4" y2="92" stroke="#000" stroke-dasharray="4 3"/>
+  <g font-family="serif" font-size="15">
+    <text x="126" y="14">A</text><text x="14" y="214">B</text><text x="242" y="214">C</text>
+    <text x="70" y="90">E</text><text x="178" y="90">F</text><text x="138" y="108">D</text>
+  </g>
+</svg>
+```
+
+::: {.problem data-n="5"}
+Dokažte, že $\dfrac{\operatorname{dist}(F,AB)}{\operatorname{dist}(C,AB)}=\dfrac1{1+p}$ a $\dfrac{\operatorname{dist}(D,AB)}{\operatorname{dist}(F,AB)}=\dfrac p{1+p}$.
+:::
+
+<details><summary>Nápověda</summary>
+
+První: $F$ leží na $AC$ a $A$ je na přímce $AB$ (úloha 4, podobnost). Druhé: úloha 2 s $\ell=AB$, $E$ na $\ell$ a $ED:DF=p:1$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+První: bod $F$ leží na úsečce $AC$ s $AF:AC=\frac1{1+p}$, vzdálenost $A$ od $AB$ je nula, takže $\operatorname{dist}(F,AB)=\frac1{1+p}\operatorname{dist}(C,AB)$. Druhé: $E\in AB$ má vzdálenost $0$, $ED:DF=p:1$, podle úlohy 2 je vzdálenost $D$ rovna $\frac p{1+p}$ vzdálenosti $F$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Dokažte, že $S_{ABC}:S_{ABD}=\dfrac{(1+p)^2}p$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Trojúhelníky $ABC$ a $ABD$ mají společnou základnu $AB$. Použijte úlohu 1 b) a úlohu 5.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 5 je $\operatorname{dist}(D,AB)=\frac p{1+p}\cdot\frac1{1+p}\operatorname{dist}(C,AB)=\frac p{(1+p)^2}\operatorname{dist}(C,AB)$. Podle úlohy 1 b) je $S_{ABD}:S_{ABC}=\frac p{(1+p)^2}$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Ukažte, že poměr z úlohy 6 je pro $p=\frac23$ i pro $p=\frac32$ stejný.
+:::
+
+<details><summary>Řešení</summary>
+
+$p=\frac23$: $\frac{(5/3)^2}{2/3}=\frac{25}9\cdot\frac32=\frac{25}6$. $p=\frac32$: $\frac{(5/2)^2}{3/2}=\frac{25}4\cdot\frac23=\frac{25}6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Dokažte, že pro $p>0$ platí $p+\dfrac1p\ge2$ a kdy nastane rovnost.
+:::
+
+<details><summary>Řešení</summary>
+
+$p+\frac1p-2=\frac{(p-1)^2}p\ge0$. Rovnost pro $p=1$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Úhlopříčky konvexního čtyřúhelníku $ABCD$ se protínají v $P$. Obsahy trojúhelníků $ABP$, $BCP$, $CDP$, $DAP$ jsou $S_1,S_2,S_3,S_4$. Dokažte $S_1S_3=S_2S_4$.
+:::
+
+<details><summary>Řešení</summary>
+
+Trojúhelníky $ABP$ a $BCP$ mají společný vrchol $B$ a základny $AP$, $PC$ na přímce $AC$: $S_1:S_2=AP:PC$. Trojúhelníky $DAP$ a $CDP$ mají společný vrchol $D$ a stejné základny: $S_4:S_3=AP:PC$. Tedy $S_1:S_2=S_4:S_3$, $S_1S_3=S_2S_4$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Uvnitř stran $AB$, $AC$ daného trojúhelníku $ABC$ jsou zvoleny po řadě body $E$, $F$, přičemž $EF\parallel BC$. Úsečka $EF$ je pak rozdělena bodem $D$ tak, že platí $p=|ED|:|DF|=|BE|:|EA|$.
+
+a) Ukažte, že poměr obsahů trojúhelníků $ABC$ a $ABD$ je pro $p=2:3$ stejný jako pro $p=3:2$.
+
+b) Zdůvodněte, proč poměr obsahů trojúhelníků $ABC$ a $ABD$ má hodnotu nejméně $4$.
+
+Zdroj: Matematická olympiáda, kategorie C, I. kolo, domácí část, návody k úloze 4 (matematickaolympiada.cz, soubor c65i-n.pdf; ročník neověřen).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 6, 7 a 8.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 6 je poměr $S_{ABC}:S_{ABD}=\frac{(1+p)^2}p=p+2+\frac1p$. a) Podle úlohy 7 je pro $p=\frac23$ i $p=\frac32$ roven $\frac{25}6$. b) Podle úlohy 8 je $p+\frac1p\ge2$, tedy poměr je alespoň $2+2=4$, s rovností pro $p=1$ ($D$ je střed $EF$ a $E$ střed $AB$). $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+$DE\parallel BC$, $AD=3$, $AB=5$, $S_{ABC}=50$. Obsah $ADE$? (Lekce 7)
+:::
+
+<details><summary>Řešení</summary>
+
+$k=\frac35$, $\frac9{25}\cdot50=18$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Najděte nejmenší hodnotu výrazu $x^2+2y^2-2xy+2y+5$. (Lekce 22)
+:::
+
+<details><summary>Řešení</summary>
+
+$(x-y)^2+(y+1)^2+4$, minimum $4$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Obsah čtverce s úhlopříčkou $13$. (Lekce 20)
+:::
+
+<details><summary>Řešení</summary>
+
+$\frac{169}2=84{,}5$. $\blacksquare$
+
+</details>

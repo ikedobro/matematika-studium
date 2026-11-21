@@ -1,0 +1,195 @@
+---
+title: "Lekce 20: čtverec a jeho úhlopříčka"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si obrázek. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="Pythagorova věta"}
+V pravoúhlém trojúhelníku s odvěsnami $a$, $b$ a přeponou $c$ platí $a^2+b^2=c^2$.
+:::
+
+::: {.problem data-n="1"}
+Pravoúhlý trojúhelník má odvěsny $12$ a $5$. Určete přeponu.
+:::
+
+<details><summary>Řešení</summary>
+
+$\sqrt{144+25}=\sqrt{169}=13$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Čtverec má stranu $5$. Určete jeho úhlopříčku.
+:::
+
+<details><summary>Nápověda</summary>
+
+Úhlopříčka je přepona pravoúhlého trojúhelníku, jehož odvěsny jsou dvě strany čtverce.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$d=\sqrt{25+25}=5\sqrt2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Dokažte, že čtverec s úhlopříčkou $d$ má obsah $\dfrac{d^2}2$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Strana $a$, úhlopříčka $d$: $d^2=2a^2$. Obsah čtverce je $a^2$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Z Pythagorovy věty $d^2=a^2+a^2=2a^2$, tedy $a^2=\frac{d^2}2$. Obsah čtverce je $a^2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Určete obsah čtverce s úhlopříčkou $13$.
+:::
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 3: $\frac{13^2}2=\frac{169}2=84{,}5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Určete délku strany čtverce s obsahem $50$ a jeho úhlopříčku.
+:::
+
+<details><summary>Řešení</summary>
+
+$a=\sqrt{50}=5\sqrt2$. Podle úlohy 3 je $d^2=2\cdot50=100$, $d=10$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Z bodu $D$ jdeme $3$ cm vodorovně doprava do $E$, pak $2$ cm svisle dolů do $F$, pak $3$ cm doprava do $G$ a nakonec $1$ cm dolů do $H$. Jak daleko je $H$ od $D$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Spočtěte celkový vodorovný a celkový svislý posun. Mezi $D$ a $H$ je přepona pravoúhlého trojúhelníku.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Vodorovně $3+3=6$, svisle $2+1=3$. $|DH|=\sqrt{36+9}=\sqrt{45}=3\sqrt5$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Vysvětlete, proč u lomené čáry s pravými úhly, jejíž úseky jsou střídavě vodorovné a svislé, jsou odvěsny trojúhelníku rovny součtu všech vodorovných a součtu všech svislých úseků.
+:::
+
+<details><summary>Nápověda</summary>
+
+Posuňte všechny vodorovné úseky na jednu přímku, všechny svislé na jinou. Co se stane s koncovými body?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Vodorovný posun mezi začátkem a koncem je součet vodorovných úseků (všechny jdou stejným směrem), svislý posun je součet svislých úseků. Doplníme-li pravý úhel v bodě $K$, který je ve výšce začátku a na svislici konce, je $DK$ rovno součtu vodorovných a $KB$ součtu svislých úseků. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Lomená čára $DEFGHB$ má pravé úhly a úseky $DE=6$ (vodorovně doprava), $EF=4$ (dolů), $FG=4$ (doprava), $GH=1$ (dolů), $HB=2$ (doprava). Určete $|DB|$.
+:::
+
+<details><summary>Řešení</summary>
+
+Vodorovně $6+4+2=12$, svisle $4+1=5$. $|DB|=\sqrt{144+25}=13$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Vrcholy čtverce $ABCD$ spojuje lomená čára $DEFGHB$ s pravými úhly a úseky $DE=4$ (doprava), $EF=1$ (dolů), $FG=2$ (doprava), $GH=3$ (dolů), $HB=2$ (doprava). Určete obsah čtverce.
+:::
+
+<details><summary>Řešení</summary>
+
+Vodorovně $4+2+2=8$, svisle $1+3=4$. $|DB|^2=64+16=80$. Obsah $=\frac{80}2=40$. $\blacksquare$
+
+</details>
+
+```{=html}
+<svg viewBox="0 0 260 260" width="260" height="260" style="display:block;margin:1rem auto" role="img" aria-label="Čtverec ABCD s lomenou čárou DEFGHB">
+  <polygon points="30,70 157.5,17.5 210,145 82.5,197.5" fill="none" stroke="#000" stroke-width="1.5"/>
+  <polyline points="30,70 120,70 120,130 180,130 180,145 210,145" fill="none" stroke="#000" stroke-width="1.5"/>
+  <polyline points="30,70 210,70 210,145" fill="none" stroke="#000" stroke-dasharray="4 3"/>
+  <line x1="30" y1="70" x2="210" y2="145" stroke="#000" stroke-dasharray="4 3"/>
+  <g font-family="serif" font-size="15">
+    <text x="14" y="68">D</text><text x="160" y="14">A</text><text x="214" y="150">B</text><text x="66" y="212">C</text>
+    <text x="118" y="64">E</text><text x="108" y="140">F</text><text x="176" y="124">G</text><text x="170" y="160">H</text><text x="214" y="68">K</text>
+  </g>
+</svg>
+```
+
+::: {.problem .target data-n="10"}
+Vrcholy čtverce $ABCD$ spojuje lomená čára $DEFGHB$. Menší úhly u vrcholů $E$, $F$, $G$, $H$ jsou pravé a úsečky $DE$, $EF$, $FG$, $GH$, $HB$ po řadě měří $6$ cm, $4$ cm, $4$ cm, $1$ cm, $2$ cm. Určete obsah čtverce $ABCD$.
+
+Zdroj: 72. ročník Matematické olympiády (2022/23), I. kolo kategorie Z9, úloha Z9–I–6, autorka M. Dillingerová (matematickaolympiada.cz, soubor z72i-9.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Úhlopříčku $DB$ spočtěte jako přeponu trojúhelníku $DKB$, jehož odvěsny jsou součty rovnoběžných úseků (úlohy 7 a 8). Potom použijte úlohu 3.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$|DK|=|DE|+|FG|+|HB|=6+4+2=12$ cm, $|KB|=|EF|+|GH|=4+1=5$ cm. $|DB|^2=12^2+5^2=169$ cm$^2$. Podle úlohy 3 je obsah čtverce $\frac{|DB|^2}2=84{,}5$ cm$^2$. (Tak je to i v oficiálním řešení.) $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Určete $\angle AFD$ v úloze o dvou rovnostranných trojúhelnících ($ABC$, $BDE$). (Lekce 19)
+:::
+
+<details><summary>Řešení</summary>
+
+$120^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Poloměr vepsané kružnice pravoúhlého trojúhelníku s odvěsnami $5$ a $12$. (Lekce 7)
+:::
+
+<details><summary>Řešení</summary>
+
+$r=\frac{5+12-13}2=2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Vzdálenost bodů $[0,0]$ a $[5,12]$. (Lekce 13)
+:::
+
+<details><summary>Řešení</summary>
+
+$\sqrt{25+144}=13$. $\blacksquare$
+
+</details>

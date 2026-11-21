@@ -1,6 +1,6 @@
 # Plán studia: matematika a olympiáda
 
-Česky psané lekce ve stylu programované výuky. Každá lekce: definice, úlohy po malých krocích, skryté nápovědy a řešení, na konci opakování ze starších lekcí. Lekce 1, 2, 8, 9, 11 a 12 končí skutečnou úlohou Matematické olympiády.
+Česky psané lekce ve stylu programované výuky. Každá lekce: definice, úlohy po malých krocích, skryté nápovědy a řešení, na konci opakování ze starších lekcí. Lekce 1, 2, 8, 9, 11, 12 a 18 až 23 končí skutečnou úlohou Matematické olympiády.
 
 Začátek je `index.html` (plán po týdnech, odkazy na lekce). Kartičky do aplikace Anki: `anki_kartky.txt`.
 
@@ -17,4 +17,4 @@ Na GitHubu: Settings, Pages, Source = GitHub Actions. Po každém pushi do `main
 
 Zadání úloh označených „Zdroj“ pocházejí z archivu Matematické olympiády (matematickaolympiada.cz) a patří jejich autorům. Hinty, kroky a řešení jsou vlastní. Licence vlastního textu: zatím nezvolena.
 
-Řešení lekcí 8, 9, 11 a 12 nejsou porovnána s oficiálními řešeními.
+Výsledky cílových úloh lekcí 2, 18, 19 a 20 odpovídají oficiálním řešením (úlohy Z9). U lekcí 1, 8, 9, 11, 12, 21, 22 a 23 oficiální řešení k dispozici nebylo, výsledky jsou ověřeny výpočtem.

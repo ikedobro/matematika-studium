@@ -1,0 +1,190 @@
+---
+title: "Lekce 18: prvočinitelé a mocniny"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="jednoznačný rozklad"}
+Každé celé číslo větší než $1$ lze zapsat jako součin prvočísel, a to jediným způsobem (až na pořadí). Dvě kladná celá čísla se proto rovnají právě když mají v rozkladu každé prvočíslo ve stejné mocnině. Má-li $a$ prvočinitele $r$ v mocnině $x$, má $a^k$ prvočinitele $r$ v mocnině $kx$.
+:::
+
+::: {.problem data-n="1"}
+Rozložte na prvočinitele čísla $360$ a $539$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Dělte nejmenšími prvočísly. Pro $539$ zkuste $7$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$360=2^3\cdot3^2\cdot5$. $539=7\cdot77=7^2\cdot11$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte, že $7^3\cdot11^2=41\,503$.
+:::
+
+<details><summary>Řešení</summary>
+
+$7^3=343$, $11^2=121$, $343\cdot121=34\,300+7\,203=41\,503$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Je $a=7^k\cdot11^m$, kde $k,m\ge0$ jsou celá čísla. V jaké mocnině je $7$ a v jaké $11$ v součinu $7a^3$?
+:::
+
+<details><summary>Nápověda</summary>
+
+Z definice 1: v $a^3$ je sedmička v mocnině $3k$. Součin přidá ještě jednu.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$7a^3=7\cdot7^{3k}\cdot11^{3m}=7^{3k+1}\cdot11^{3m}$. Sedmička v mocnině $3k+1$, jedenáctka v mocnině $3m$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="4"}
+Je $b=7^l\cdot11^n$. V jakých mocninách jsou $7$ a $11$ v součinu $11b^5$?
+:::
+
+<details><summary>Řešení</summary>
+
+$11b^5=11\cdot7^{5l}\cdot11^{5n}=7^{5l}\cdot11^{5n+1}$. Sedmička v mocnině $5l$, jedenáctka v mocnině $5n+1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Podle definice 1 zapište rovnost $7a^3=11b^5$ jako dvě rovnice pro exponenty.
+:::
+
+<details><summary>Nápověda</summary>
+
+Rovnají se mocniny sedmičky a mocniny jedenáctky zvlášť. Použijte úlohy 3 a 4.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Sedmička: $3k+1=5l$. Jedenáctka: $3m=5n+1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Najděte nejmenší nezáporná celá čísla $k,l$ s $3k+1=5l$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Zkoušejte $l=0,1,2,\dots$ a hledejte, kdy je $5l-1$ dělitelné třemi.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$l=0$: $3k=-1$ ne. $l=1$: $3k=4$ ne. $l=2$: $3k=9$, $k=3$ ano. Nejmenší $k=3$, $l=2$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Najděte nejmenší nezáporná celá čísla $m,n$ s $3m=5n+1$.
+:::
+
+<details><summary>Řešení</summary>
+
+$n=0$: $3m=1$ ne. $n=1$: $3m=6$, $m=2$ ano. Nejmenší $m=2$, $n=1$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Nechť $r$ je prvočíslo různé od $7$ a $11$ a nechť $r$ dělí $a$ v mocnině $x$ a $b$ v mocnině $y$. Co plyne z rovnosti $7a^3=11b^5$? Proč není pro nejmenší řešení potřeba žádné další prvočíslo?
+:::
+
+<details><summary>Nápověda</summary>
+
+Porovnejte mocniny $r$ na obou stranách. Je $x=y=0$ možné?
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Mocniny $r$ se rovnají: $3x=5y$. Řešení $x=y=0$ existuje, a každé jiné má $x,y>0$ (dokonce $x\ge5$), takže by číslo bylo větší. Nejmenší řešení tedy další prvočinitele nemá. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Najděte nejmenší kladná celá čísla $a,b$, pro která platí $2a^2=3b^3$.
+:::
+
+<details><summary>Řešení</summary>
+
+Nechť $a=2^k3^m$, $b=2^l3^n$. Dvojka: $2k+1=3l$, nejmenší $l=1$, $k=1$. Trojka: $2m=3n+1$, nejmenší $n=1$, $m=2$. $a=2\cdot9=18$, $b=2\cdot3=6$. Kontrola: $2\cdot324=648=3\cdot216$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Najděte nejmenší kladná celá čísla $a$ a $b$, pro která platí $7a^3=11b^5$.
+
+Zdroj: 72. ročník Matematické olympiády (2022/23), I. kolo kategorie Z9, úloha Z9–I–4, autorka A. Bohiniková (matematickaolympiada.cz, soubor z72i-9.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 5, 6, 7 a 8.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 8 mají $a,b$ jen prvočinitele $7$ a $11$: $a=7^k11^m$, $b=7^l11^n$. Podle úlohy 5 je $3k+1=5l$ a $3m=5n+1$. Podle úloh 6 a 7 nejmenší $k=3$, $l=2$, $m=2$, $n=1$. Tedy $a=7^3\cdot11^2=41\,503$ a $b=7^2\cdot11=539$.
+
+Kontrola: $7a^3=7^{10}\cdot11^6$ a $11b^5=11\cdot7^{10}\cdot11^5=7^{10}\cdot11^6$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Najděte přirozená čísla $x>y$ s $x^2-y^2=21$. (Lekce 9)
+:::
+
+<details><summary>Řešení</summary>
+
+$(x,y)=(11,10)$ a $(5,2)$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Rozložte $915$ na prvočinitele. (Lekce 1)
+:::
+
+<details><summary>Řešení</summary>
+
+$915=3\cdot5\cdot61$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Zderivujte $x^2\ln x$. (Lekce 15)
+:::
+
+<details><summary>Řešení</summary>
+
+$2x\ln x+x$. $\blacksquare$
+
+</details>

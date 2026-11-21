@@ -1,0 +1,203 @@
+---
+title: "Lekce 19: úhly a dva rovnostranné trojúhelníky"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Každou úlohu nejprve řešte na papíře a nakreslete si obrázek. Nápověda a řešení jsou zavřené; otevřete je až po vlastním pokusu. Poslední úloha je skutečná úloha Matematické olympiády. Na konci je opakování.
+
+::: {.definition data-n="1" data-name="co budeme používat"}
+Součet úhlů v trojúhelníku je $180^\circ$. Rovnostranný trojúhelník má všechny úhly $60^\circ$. V rovnoramenném trojúhelníku jsou úhly při základně stejné. Trojúhelníky, které se shodují ve dvou stranách a úhlu jimi sevřeném, jsou shodné (věta sus), a pak se shodují i ostatní odpovídající úhly a strany.
+:::
+
+::: {.problem data-n="1"}
+Rovnoramenný trojúhelník má úhel při vrcholu $100^\circ$. Určete úhly při základně.
+:::
+
+<details><summary>Řešení</summary>
+
+Úhly při základně jsou stejné a dávají dohromady $180^\circ-100^\circ=80^\circ$. Každý má $40^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="2"}
+Dokažte, že součet úhlů v konvexním čtyřúhelníku je $360^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Rozdělte čtyřúhelník úhlopříčkou na dva trojúhelníky.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Úhlopříčka $AC$ rozdělí čtyřúhelník $ABCD$ na trojúhelníky $ABC$ a $ACD$. Úhly obou trojúhelníků dohromady tvoří právě úhly čtyřúhelníku. Součet je $2\cdot180^\circ=360^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="3"}
+Jsou dány dva shodné rovnostranné trojúhelníky $ABC$ a $BDE$. Dokažte, že $BA=BC=BD=BE$.
+:::
+
+<details><summary>Řešení</summary>
+
+Všechny strany rovnostranného trojúhelníku $ABC$ mají tutéž délku $s$. Trojúhelník $BDE$ je s ním shodný, jeho strany mají také délku $s$. Tedy $BA=BC=BD=BE=s$. $\blacksquare$
+
+</details>
+
+```{=html}
+<svg viewBox="0 0 380 240" width="380" height="240" style="display:block;margin:1rem auto" role="img" aria-label="Dva rovnostranné trojúhelníky ABC a BDE se společným vrcholem B, úsečky AE a CD se protínají v F">
+  <polygon points="50,200 200,200 125,70" fill="none" stroke="#000" stroke-width="1.5"/>
+  <polygon points="200,200 330,125 200,50" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="50" y1="200" x2="200" y2="50" stroke="#000"/>
+  <line x1="125" y1="70" x2="330" y2="125" stroke="#000"/>
+  <g font-family="serif" font-size="15">
+    <text x="34" y="214">A</text><text x="198" y="218">B</text><text x="112" y="62">C</text>
+    <text x="334" y="130">D</text><text x="204" y="46">E</text><text x="152" y="100">F</text>
+  </g>
+</svg>
+```
+
+::: {.problem data-n="4"}
+Označme $\omega=\angle ABD$, kde $120^\circ<\omega<180^\circ$, a $C$, $E$ leží ve stejné polorovině vymezené přímkou $AD$. Polopřímky z $B$ jdou v pořadí $BA$, $BC$, $BE$, $BD$. Dokažte, že $\angle ABE=\angle CBD=\omega-60^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Úhly $\angle ABC$ a $\angle EBD$ mají $60^\circ$. Vyjádřete $\angle ABE$ i $\angle CBD$ pomocí $\omega$.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$\angle ABE=\angle ABD-\angle EBD=\omega-60^\circ$. $\angle CBD=\angle ABD-\angle ABC=\omega-60^\circ$. (Podmínka $\omega>120^\circ$ zaručuje pořadí paprsků.) $\blacksquare$
+
+</details>
+
+::: {.problem data-n="5"}
+Dokažte, že trojúhelníky $ABE$ a $CBD$ jsou shodné a že úhly $\angle BAE$, $\angle BEA$, $\angle BCD$, $\angle BDC$ jsou všechny stejné. Označte je $\alpha$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Shodnost: $BA=BC$, $BE=BD$ (úloha 3) a úhel mezi nimi (úloha 4). Trojúhelníky jsou rovnoramenné.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+$BA=BC$, $BE=BD$ a $\angle ABE=\angle CBD$, trojúhelníky $ABE$ a $CBD$ jsou shodné podle věty sus. V trojúhelníku $ABE$ je $BA=BE$, takže $\angle BAE=\angle BEA$. V trojúhelníku $CBD$ je $BC=BD$, takže $\angle BCD=\angle BDC$. Ze shodnosti je $\angle BAE=\angle BCD$. Všechny čtyři úhly jsou tedy rovny $\alpha$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="6"}
+Dokažte, že $2\alpha+\omega=240^\circ$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Součet úhlů v trojúhelníku $ABE$: úhel při $B$ je $\omega-60^\circ$ (úloha 4).
+
+</details>
+
+<details><summary>Řešení</summary>
+
+V trojúhelníku $ABE$: $2\alpha+(\omega-60^\circ)=180^\circ$, tedy $2\alpha+\omega=240^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="7"}
+Čtyřúhelník $AFDB$ má při $A$ úhel $\alpha$, při $D$ úhel $\alpha$, při $B$ úhel $\omega$. Určete úhel $\varphi=\angle AFD$.
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 2 a 6.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 2: $2\alpha+\omega+\varphi=360^\circ$. Podle úlohy 6 je $2\alpha+\omega=240^\circ$. Tedy $\varphi=120^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="8"}
+Zkouška: pro $\omega=150^\circ$ určete $\alpha$ a ověřte, že $\varphi=120^\circ$.
+:::
+
+<details><summary>Řešení</summary>
+
+$2\alpha=240^\circ-150^\circ=90^\circ$, $\alpha=45^\circ$. Čtyřúhelník $AFDB$: $45^\circ+45^\circ+150^\circ+\varphi=360^\circ$, $\varphi=120^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem .bez data-n="9"}
+Body $A,B,D$ leží na přímce, $B$ je mezi $A$ a $D$, trojúhelníky $ABC$ a $BDE$ jsou rovnostranné se stejnou stranou a $C,E$ leží ve stejné polorovině. Přímky $CD$ a $AE$ se protínají v $F$. Určete $\angle AFD$.
+:::
+
+<details><summary>Řešení</summary>
+
+Je $\omega=180^\circ$. Podle úlohy 4 je $\angle ABE=\angle CBD=120^\circ$. Rovnoramenné trojúhelníky $ABE$ a $CBD$ ($BA=BE$, $BC=BD$) mají tedy úhly při základně $\alpha=\frac{180^\circ-120^\circ}2=30^\circ$. Body $A,B,D$ leží na přímce, takže v trojúhelníku $AFD$ je $\angle FAD=\angle BAE=30^\circ$ a $\angle FDA=\angle BDC=30^\circ$. Tedy $\angle AFD=180^\circ-30^\circ-30^\circ=120^\circ$. $\blacksquare$
+
+</details>
+
+::: {.problem .target data-n="10"}
+Jsou dány dva shodné rovnostranné trojúhelníky $ABC$ a $BDE$ tak, že velikost úhlu $ABD$ je větší než $120^\circ$ a menší než $180^\circ$ a body $C$, $E$ leží ve stejné polorovině vymezené přímkou $AD$. Průsečík $CD$ a $AE$ je označen $F$. Určete velikost úhlu $AFD$.
+
+Zdroj: 72. ročník Matematické olympiády (2022/23), I. kolo kategorie Z9, úloha Z9–I–2, autorka I. Jančigová (matematickaolympiada.cz, soubor z72i-9.pdf).
+:::
+
+<details><summary>Nápověda</summary>
+
+Použijte úlohy 3 až 7.
+
+</details>
+
+<details><summary>Řešení</summary>
+
+Podle úlohy 3 je $BA=BC=BD=BE$. Podle úlohy 5 jsou trojúhelníky $ABE$ a $CBD$ shodné a úhly $\angle BAE$, $\angle BEA$, $\angle BCD$, $\angle BDC$ jsou $\alpha$. Podle úlohy 6 je $2\alpha+\omega=240^\circ$ a podle úlohy 7 je $\angle AFD=120^\circ$. Výsledek nezávisí na $\omega$.
+
+Jiné řešení (oficiální): otočení kolem $B$ o $60^\circ$ převede $A$ na $C$ a $E$ na $D$. Přímka $AE$ přejde na přímku $CD$, takže svírají úhel $60^\circ$. Úhel $AFC$ je $60^\circ$ a úhel $AFD$ jej doplňuje na přímý, tedy $120^\circ$. $\blacksquare$
+
+</details>
+
+::: poznamka
+Opakování ze starších lekcí. Zkuste bez nápovědy.
+:::
+
+::: {.problem data-n="R1"}
+Najděte nejmenší kladná celá čísla $a,b$ s $2a^2=3b^3$. (Lekce 18)
+:::
+
+<details><summary>Řešení</summary>
+
+$a=18$, $b=6$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R2"}
+Pravoúhlý trojúhelník, výška na přeponu dělí přeponu na $9$ a $16$. Určete výšku. (Lekce 8)
+:::
+
+<details><summary>Řešení</summary>
+
+$v^2=9\cdot16=144$, $v=12$. $\blacksquare$
+
+</details>
+
+::: {.problem data-n="R3"}
+Hodíme dvěma kostkami. Pravděpodobnost součtu $9$. (Lekce 6)
+:::
+
+<details><summary>Řešení</summary>
+
+Čtyři příznivé dvojice ze $36$: $\frac19$. $\blacksquare$
+
+</details>
