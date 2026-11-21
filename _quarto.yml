@@ -10,3 +10,7 @@ project:
     - index.html
     - style.css
     - anki_kartky.txt
+
+format:
+  html:
+    include-after-body: egg.html
