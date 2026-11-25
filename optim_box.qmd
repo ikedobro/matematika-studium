@@ -1,0 +1,484 @@
+---
+title: "Konvexní analýza krok za krokem"
+lang: cs
+format:
+  html:
+    theme: none
+    css: style.css
+    html-math-method: katex
+    embed-resources: true
+---
+
+Čti postup a klepej na **Dál**. Čas od času přijde jednoduchá otázka na další krok. Špatná odpověď nic nestojí, jen ukáže správný krok. Každá kapitola si pamatuje, kde jsi skončil. Úlohy jsou řazené tak, že se ukazuje stále méně postupu a ptá se víc.
+
+```{=html}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" onload="window.dispatchEvent(new Event('kx'))"></script>
+<style>
+:root { --bg:#16181c; --card:#22262c; --card2:#2b3037; --line:#3a4048; --text:#e6e8eb; --mute:#9aa3ad; --acc:#7aa2f7; --ok:#4c8a5a; --okbg:#243a2c; --bad:#a05555; }
+html { background:var(--bg); -webkit-text-size-adjust:100%; }
+body { background:var(--bg); color:var(--text); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:1.05rem; line-height:1.55; max-width:36rem; margin:0 auto; padding:1rem 1rem 5rem; overflow-wrap:anywhere; }
+h1.title { color:var(--text); font-weight:600; font-size:1.45rem; text-align:left; margin:.5rem 0 1rem; }
+p { text-align:left; hyphens:none; }
+a { color:var(--acc); }
+#box .tabs { display:flex; gap:.4rem; flex-wrap:wrap; margin:.8rem 0; }
+#box .tabs button { flex:1 1 30%; width:auto; min-height:2.8rem; text-align:center; font-size:.95rem; padding:.5rem; margin:0; }
+#box .tabs button.on { background:var(--acc); color:#10131a; border:0; font-weight:600; }
+#box .bar { height:.45rem; background:var(--card2); border-radius:99px; overflow:hidden; margin:.8rem 0 1.2rem; }
+#box .bar > div { height:100%; background:var(--acc); width:0; transition:width .3s; }
+#box h3 { font-weight:600; font-size:1.1rem; color:var(--text); margin:1.2rem 0 .6rem; }
+#box .t { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:.8rem 1rem; margin:.6rem 0; }
+#box .q { background:var(--card); border:1px solid var(--acc); border-radius:12px; padding:.8rem 1rem; margin:.6rem 0; font-weight:600; }
+#box .n { background:none; border:1px dashed var(--mute); border-radius:12px; padding:.8rem 1rem; margin:.8rem 0; color:var(--text); }
+#box .n::before { content:"Co se opakovalo. "; font-weight:600; color:var(--acc); }
+#box .msg { border-left:3px solid var(--acc); background:var(--card); border-radius:6px; padding:.5rem .8rem; margin:.4rem 0; font-size:.95rem; color:var(--mute); }
+#box button { display:block; width:100%; text-align:left; font:inherit; font-size:1.05rem; background:var(--card2); color:var(--text); border:1px solid var(--line); border-radius:12px; padding:.85rem 1rem; margin:.5rem 0; min-height:3.2rem; cursor:pointer; touch-action:manipulation; }
+#box button:active { background:var(--line); }
+#box button.ok { background:var(--okbg); border-color:var(--ok); }
+#box button.bad { background:var(--card); border-color:var(--bad); color:var(--mute); text-decoration:line-through; }
+#box button.go { background:var(--acc); color:#10131a; border:0; text-align:center; font-weight:600; }
+.katex { color:var(--text); }
+.katex-display { overflow-x:auto; overflow-y:hidden; }
+@media (max-width:420px) { body { font-size:1rem; padding:.8rem .8rem 5rem; } #box button { font-size:1rem; } }
+</style>
+<div id="box"></div>
+<script type="text/plain" id="bdata">
+@ Fenchel
+# Úloha 1: $f(x)=x^2$
+T: Chceme $f^*(y)=\sup_x\,(xy-x^2)$. Vezmeme pevné $y$. Pak $xy-x^2$ je parabola otevřená dolů, takže její maximum leží tam, kde je derivace nula.
+T: Derivace podle $x$ je $y-2x$. Položíme ji rovnu nule: $y=2x$, tedy $x=y/2$.
+Q: Toto $x$ dosadíme do $xy-x^2$. Co vznikne?
++ $\dfrac y2\cdot y-\dfrac{y^2}{4}$
+- $y\cdot y-y^2$
+- $\dfrac y2\cdot y-\dfrac y2$
+W: Za každé $x$ dosadíme $y/2$.
+T: Spočteme $\dfrac{y^2}{2}-\dfrac{y^2}{4}=\dfrac{y^2}{4}$.
+Q: Pro která $y$ tento vzorec platí?
++ pro všechna $y\in\mathbb R$
+- jen pro $y\ge0$
+- jen pro $y\ne0$
+W: Rovnice $y=2x$ má řešení pro každé $y$.
+T: **Výsledek:** $f^*(y)=y^2/4$ na celém $\mathbb R$.
+N: derivace $=0$, vyjádři $x$, dosaď, napiš obor $y$.
+
+# Úloha 2: $f(x)=|x|$
+T: Chceme $f^*(y)=\sup_x\,(xy-|x|)$. Rozdělíme: pro $x\ge0$ je výraz $x(y-1)$, pro $x<0$ je $x(y+1)$.
+Q: Nechť $y>1$ a $x\to+\infty$. Kam jde $x(y-1)$?
++ k $+\infty$
+- k $0$
+- k $-\infty$
+W: $y-1>0$ a $x$ roste.
+T: Pro $y>1$ je tedy $f^*(y)=\infty$. Podobně pro $y<-1$ vezmeme $x\to-\infty$.
+T: Nechť $|y|\le1$. Pak $x(y-1)\le0$ pro $x\ge0$ a $x(y+1)\le0$ pro $x<0$. Oba výrazy jsou nekladné.
+Q: Největší hodnota, jaké může nekladné číslo dosáhnout, je nula. V jakém $x$ ji dostaneme?
++ $x=0$
+- $x=1$
+- $x=y$
+W: Pro $x=0$ je $xy-|x|=0$.
+T: **Výsledek:** $f^*(y)=0$ pro $|y|\le1$ a $f^*(y)=\infty$ pro $|y|>1$.
+Q: Kolik je $f^*(0{,}5)$?
++ $0$
+- $0{,}5$
+- $\infty$
+W: $|0{,}5|\le1$, takže platí první řádek.
+N: u zlomu sleduj sklony. Pro $y$ mimo rozsah sklonů je $f^*=\infty$, uvnitř je maximum ve zlomu.
+
+# Úloha 3: $f(x)=x\ln x$, $x>0$
+T: Chceme $f^*(y)=\sup_{x>0}\,(xy-x\ln x)$. Funkce $g(x)=xy-x\ln x$ je konkávní, takže maximum je tam, kde $g'(x)=0$.
+Q: Spočti $g'(x)$.
++ $y-\ln x-1$
+- $y-\ln x$
+- $y-\dfrac1x$
+W: $(x\ln x)'=\ln x+1$, protože $(x\ln x)'=1\cdot\ln x+x\cdot\frac1x$.
+Q: Z $y-\ln x-1=0$ vyjádři $x$.
++ $x=e^{y-1}$
+- $x=e^{y+1}$
+- $x=e^y-1$
+W: $\ln x=y-1$.
+T: Dosadíme: $xy-x\ln x=x(y-\ln x)$. Protože $y-\ln x=1$, zbyde jen $x=e^{y-1}$.
+Q: Pro která $y$ tento vzorec platí?
++ pro všechna $y\in\mathbb R$
+- jen pro $y>0$
+- jen pro $y>1$
+W: $e^{y-1}>0$ je přípustné $x$ pro každé $y$.
+T: **Výsledek:** $f^*(y)=e^{y-1}$ na celém $\mathbb R$.
+N: stejný recept jako u $x^2$. Nové je jen to, že $x>0$ nic nezakazuje.
+
+# Úloha 4 (sám): $f(x)=e^x$
+Q: Nechť $y<0$ a $x\to-\infty$. Kam jde $xy-e^x$?
++ k $+\infty$
+- k $0$
+- k $-\infty$
+W: $xy=|x||y|\to\infty$ a $e^x\to0$. Pro $y<0$ je tedy $f^*(y)=\infty$.
+Q: Pro $y>0$ je $g(x)=xy-e^x$. Řeš $g'(x)=y-e^x=0$.
++ $x=\ln y$
+- $x=e^y$
+- $x=y$
+W: $e^x=y$, tedy $x=\ln y$ (to jde jen pro $y>0$).
+Q: Dosaď $x=\ln y$ do $xy-e^x$.
++ $y\ln y-y$
+- $y\ln y-1$
+- $y\ln y+y$
+W: $e^{\ln y}=y$, takže $xy-e^x=y\ln y-y$.
+Q: Co je $f^*(0)=\sup_x(-e^x)$?
++ $0$ (supremum, nedosažené)
+- $-1$
+- $\infty$
+W: $-e^x<0$ a $-e^x\to0$ pro $x\to-\infty$. Souhlasí to s $y\ln y-y\to0$ pro $y\to0^+$.
+N: kde je $\infty$, $g'=0$, vyjádři $x$, dosaď, obor. Pět kroků, každý jste zvládl.
+
+@ Konvexní funkce
+# Úloha 1 (6.2.2): $f(x)=e^x$
+T: Funkce je *konvexní*, když leží pod každou svou tětivou. Je-li $f$ dvakrát diferencovatelná, stačí, aby $f''\ge0$ na intervalu.
+T: Pro $f(x)=e^x$ je $f'(x)=e^x$.
+Q: Spočti $f''(x)$.
++ $e^x$
+- $-e^x$
+- $xe^x$
+W: Derivace $e^x$ je $e^x$.
+T: Protože $e^x>0$ pro všechna $x$, je $f''>0$ a $f$ je konvexní na $\mathbb R$.
+Q: Je $f$ konvexní na $\mathbb R$?
++ Ano, protože $f''>0$
+- Ne, protože roste příliš rychle
+- Jen na $x>0$
+W: Rozhoduje znaménko $f''$, ne rychlost růstu.
+N: spočti $f''$, zjisti znaménko, udělej závěr.
+
+# Úloha 2 (6.2.4): $f(x)=x\ln x$, $x>0$
+T: Postup je stejný. Derivace je $f'(x)=\ln x+1$.
+Q: Spočti $f''(x)$.
++ $\dfrac1x$
+- $\ln x$
+- $\dfrac1x+1$
+W: Derivace $\ln x$ je $1/x$ a konstanta zmizí.
+Q: Je $f$ konvexní na $(0,\infty)$?
++ Ano, $1/x>0$ pro $x>0$
+- Ne, $1/x$ klesá
+- Jen na $(1,\infty)$
+W: Znaménko $f''=1/x$ je kladné na celém $(0,\infty)$.
+N: spočti $f''$, zjisti znaménko, udělej závěr.
+
+# Úloha 3 (definice): $f(x)=|x|$
+T: Funkce $|x|$ nemá v nule derivaci, proto použijeme definici: $f$ je konvexní, když $f(\lambda a+(1-\lambda)b)\le\lambda f(a)+(1-\lambda)f(b)$ pro $\lambda\in[0,1]$.
+T: Dosadíme $f=|\cdot|$. Vlevo je $|\lambda a+(1-\lambda)b|$.
+Q: Trojúhelníková nerovnost $|u+v|\le|u|+|v|$ s $u=\lambda a$, $v=(1-\lambda)b$ dává:
++ $\le\lambda|a|+(1-\lambda)|b|$
+- $\ge\lambda|a|+(1-\lambda)|b|$
+- $=\lambda|a|+(1-\lambda)|b|$
+W: $|\lambda a|=\lambda|a|$, protože $\lambda\ge0$ a $1-\lambda\ge0$.
+T: To je přesně definice. $|x|$ je konvexní, i když v nule nemá derivaci.
+Q: Proč nešla použít druhá derivace na celém $\mathbb R$?
++ $f$ nemá derivaci v $0$
+- $f''$ je záporná
+- $f$ není spojitá
+W: V $x=0$ je zlom. $f''$ je jinde nula, ale v zlomu není definovaná.
+N: hladká funkce: $f''$. Zlom: definice, nebo pravidla (max a součet konvexních funkcí je konvexní).
+
+# Úloha 3b (6.2.3): $f(x)=x^p$ na $(0,\infty)$
+T: Pro jaká $p\in\mathbb R$ je $f$ konvexní? Zkusíme druhou derivaci.
+Q: Spočti $f''(x)$.
++ $p(p-1)x^{p-2}$
+- $px^{p-1}$
+- $p(p+1)x^{p-2}$
+W: $f'=px^{p-1}$, tedy $f''=p(p-1)x^{p-2}$.
+Q: Pro $x>0$ je $x^{p-2}>0$. Kdy je $p(p-1)\ge0$?
++ pro $p\le0$ nebo $p\ge1$
+- pro $0\le p\le1$
+- jen pro $p\ge1$
+W: Součin $p(p-1)$ je nezáporný mimo interval mezi kořeny $0$ a $1$.
+Q: Pro $p=\tfrac12$, tedy $f=\sqrt x$, je $f$:
++ konkávní
+- konvexní
+- ani konvexní, ani konkávní
+W: $p\in[0,1]$ dává $f''\le0$.
+N: v knize: konvexní pro $p\ge1$ a $p\le0$, konkávní pro $p\in[0,1]$.
+
+# Úloha 3c (6.2.8): $f(x_1,x_2)=e^{x_1+x_2}$
+T: Ve dvou proměnných použijeme Hessovu matici $H$. Je-li $H$ pozitivně semidefinitní, je $f$ konvexní. Jsou-li všechna vlastní čísla kladná, je ryze konvexní.
+Q: Jak vypadá $H$?
++ všechny čtyři prvky jsou $e^{x_1+x_2}$
+- jen diagonála, mimo ni nuly
+- diagonála $e^{x_1+x_2}$, mimo ni $-e^{x_1+x_2}$
+W: Každá druhá parciální derivace $e^{x_1+x_2}$ je $e^{x_1+x_2}$.
+Q: Vlastní čísla matice $\begin{pmatrix}1&1\\1&1\end{pmatrix}$ jsou:
++ $0$ a $2$
+- $1$ a $1$
+- $0$ a $1$
+W: Stopa je $2$, determinant $0$.
+Q: Závěr?
++ konvexní, ale ne ryze konvexní
+- ryze konvexní
+- silně konvexní
+W: Vlastní číslo $0$: ve směru $(1,-1)$ je funkce konstantní. Kniha: "je pouze konvexní".
+N: Hessova matice, vlastní čísla, závěr: samá $\ge0$ konvexní, samá $>0$ ryze.
+
+# Úloha 4 (sám): $f(x)=x^3$
+Q: Spočti $f''(x)$.
++ $6x$
+- $3x^2$
+- $6$
+W: $f'=3x^2$, tedy $f''=6x$.
+Q: Pro která $x$ je $f''(x)<0$?
++ pro $x<0$
+- pro $x>0$
+- nikdy
+W: $6x<0$ právě když $x<0$.
+Q: Je $f$ konvexní na celém $\mathbb R$?
++ Ne, na $x<0$ je konkávní
+- Ano, protože roste
+- Ano, protože $f''(0)=0$
+W: Stačí jeden interval se záporným $f''$.
+Q: Na jakém intervalu je konvexní?
++ $[0,\infty)$
+- $(-\infty,0]$
+- nikde
+W: $f''\ge0$ právě pro $x\ge0$.
+N: stačí jedno místo se záporným $f''$, aby $f$ nebyla konvexní na celém intervalu.
+
+# Úloha 5 (sám): $f(x)=\ln(1+e^x)$
+Q: Spočti $f'(x)$.
++ $\dfrac{e^x}{1+e^x}$
+- $\dfrac{1}{1+e^x}$
+- $\ln(1+e^x)$
+W: Řetězové pravidlo: $\dfrac{1}{1+e^x}\cdot e^x$.
+Q: Spočti $f''(x)$ (derivuj podíl).
++ $\dfrac{e^x}{(1+e^x)^2}$
+- $\dfrac{e^x}{1+e^x}$
+- $-\dfrac{e^x}{(1+e^x)^2}$
+W: Čitatel: $e^x(1+e^x)-e^x\cdot e^x=e^x$.
+Q: Jaké je znaménko $f''$?
++ kladné pro všechna $x$
+- mění se
+- záporné
+W: Čitatel i jmenovatel jsou kladné.
+Q: Je $f$ konvexní na $\mathbb R$?
++ Ano
+- Ne
+- Jen na $x>0$
+W: $f''>0$ všude.
+N: spočti $f'$, spočti $f''$, zjisti znaménko, udělej závěr.
+
+@ Podgradienty
+# Úloha 1: $f(x)=x^2$ v bodě $1$
+T: *Podgradient* funkce $f$ v bodě $x_0$ je číslo $g$, pro které přímka $f(x_0)+g(x-x_0)$ leží pod grafem $f$ všude: $f(x)\ge f(x_0)+g(x-x_0)$. Množina všech takových $g$ se značí $\partial f(x_0)$.
+T: Vezmeme $f(x)=x^2$ a $x_0=1$. Přímka musí procházet bodem $(1,1)$ a nesmí parabolu protnout.
+Q: Kolik takových přímek existuje?
++ jen jedna, tečna
+- nekonečně mnoho
+- žádná
+W: Parabola je hladká. Každá jiná přímka bodem $(1,1)$ ji protne.
+Q: Jaký je sklon tečny, tedy co je $\partial f(1)$?
++ $\{2\}$
+- $\{1\}$
+- $[0,2]$
+W: $f'(1)=2$.
+N: hladká konvexní funkce má $\partial f(x_0)=\{f'(x_0)\}$.
+
+# Úloha 2: $f(x)=|x|$ v bodě $0$
+T: Přímka $0+g\,x$ musí ležet pod $|x|$ všude.
+Q: Platí $0{,}5\,x\le|x|$ pro všechna $x$?
++ Ano
+- Ne
+W: $0{,}5x\le0{,}5|x|\le|x|$.
+Q: Platí $2x\le|x|$ pro všechna $x$?
++ Ne, např. pro $x=1$ je $2>1$
+- Ano
+- Jen pro $x<0$
+W: Pro $x=1$ je levá strana $2$ a pravá $1$.
+T: Obecně $gx\le|x|$ pro všechna $x$ platí právě když $|g|\le1$.
+Q: Tedy $\partial f(0)=$
++ $[-1,1]$
+- $\{0\}$
+- $\{-1,1\}$
+W: Všechna $g$ s $|g|\le1$ tvoří celý interval.
+N: ve zlomu je $\partial f$ interval mezi levým a pravým sklonem. Mimo zlom je to jedno číslo.
+
+# Úloha 3 (vlastní): $f(x)=\max\{x,\,2x-1\}$ v bodě $1$
+T: Obě větve se potkají v $x=1$.
+Q: Jaký je sklon levé větve (pro $x<1$)?
++ $1$
+- $2$
+- $0$
+W: Pro $x<1$ je $x>2x-1$, takže $f=x$.
+Q: Jaký je sklon pravé větve (pro $x>1$)?
++ $2$
+- $1$
+- $-1$
+W: Pro $x>1$ je $f=2x-1$.
+Q: Co je $\partial f(1)$?
++ $[1,2]$
+- $\{1,2\}$
+- $\{1{,}5\}$
+W: Interval mezi levým a pravým sklonem.
+N: ve zlomu je $\partial f$ interval mezi levým a pravým sklonem.
+
+# Úloha 3b (6.5.3): $f(x)=\max\{0,\tfrac{x^2-1}2\}$
+T: Pro $|x|<1$ je $\tfrac{x^2-1}2<0$, tedy $f=0$. Pro $|x|>1$ je $f=\tfrac{x^2-1}2$.
+Q: Co je $\partial f(0)$?
++ $\{0\}$
+- $[-1,1]$
+- $\{-\tfrac12\}$
+W: V $0$ je $f$ hladká a $f'=0$.
+Q: Co je $f'(x)$ pro $x>1$?
++ $x$
+- $\tfrac{x^2}2$
+- $1$
+W: $(\tfrac{x^2-1}2)'=x$.
+Q: Co je $\partial f(1)$? Levý sklon je $0$, pravý je $1$.
++ $[0,1]$
+- $\{0,1\}$
+- $\{1\}$
+W: Interval mezi levým a pravým sklonem. Kniha: $\partial f(1)=[0,1]$, $\partial f(-1)=[-1,0]$.
+N: hladké místo: jedno číslo $f'$. Zlom: interval mezi sklony.
+
+# Úloha 3c (6.5.14): $f(x_1,x_2)=|x_1|+|x_2|$ v bodě $(0,0)$
+T: Funkce se rozpadá na součet jedné proměnné v $x_1$ a jedné v $x_2$. Subdiferenciál je pak součin: $\partial f(0,0)=\partial|x_1|(0)\times\partial|x_2|(0)$.
+Q: Co je $\partial|x|(0)$?
++ $[-1,1]$
+- $\{0\}$
+- $\{-1,1\}$
+W: Z úlohy 2.
+Q: Jak vypadá $\partial f(0,0)$ v rovině?
++ čtverec $|a_1|\le1$, $|a_2|\le1$
+- kruh $a_1^2+a_2^2\le1$
+- kosočtverec $|a_1|+|a_2|\le1$
+W: Součin dvou intervalů $[-1,1]$ je čtverec. Kniha: $\max\{|a_1|,|a_2|\}\le1$.
+N: součet funkcí v oddělených proměnných: součin subdiferenciálů.
+
+# Úloha 3d (6.5.15): $f(x_1,x_2)=\max\{|x_1|,|x_2|\}$
+Q: V bodě $(0,1)$ je $|x_2|>|x_1|$ v okolí, takže $f=x_2$. Co je $\partial f(0,1)$?
++ $\{(0,1)\}$
+- $\{(0,0)\}$
+- čtverec $|a_1|\le1$, $|a_2|\le1$
+W: Hladké místo: gradient $(0,1)$.
+Q: Jak vypadá $\partial f(0,0)$?
++ kosočtverec $|a_1|+|a_2|\le1$
+- čtverec $\max\{|a_1|,|a_2|\}\le1$
+- kruh $a_1^2+a_2^2\le1$
+W: Je to duální k předchozí úloze: maximum norem dává součet v subdiferenciálu. Kniha: $|a_1|+|a_2|\le1$.
+N: $\max$ a $|\,|+|\,|$ si "prohazují" tvar subdiferenciálu: čtverec a kosočtverec.
+
+# Úloha 4 (sám): minimum $f(x)=|x|+\tfrac12(x-2)^2$
+T: Pravidla: $0\in\partial f(x^*)$ právě když $x^*$ je minimum (f je konvexní). Pro hladkou $h$ je $\partial(|x|+h)(x)=\partial|x|(x)+h'(x)$.
+Q: Spočti $\partial f(0)$. Zde $h'(0)=-2$.
++ $[-3,-1]$
+- $[-1,1]$
+- $[1,3]$
+W: $[-1,1]+(-2)=[-3,-1]$.
+Q: Leží $0$ v tomto intervalu?
++ Ne, takže v $0$ minimum není
+- Ano
+- Nelze určit
+W: $[-3,-1]$ obsahuje jen záporná čísla.
+Q: Pro $x>0$ je $f'(x)=1+(x-2)=x-1$. Kde je nula?
++ $x=1$
+- $x=2$
+- $x=0$
+W: $x-1=0$.
+Q: Jaká je minimální hodnota $f(1)$?
++ $\tfrac32$
+- $\tfrac12$
+- $2$
+W: $|1|+\tfrac12(1-2)^2=1+\tfrac12$.
+N: zlom: $\partial f$ je interval. Hladké místo: $f'=0$. Podívej se, zda $0\in\partial f$.
+</script>
+<script>
+(function () {
+  var raw = document.getElementById('bdata').textContent.split('\n');
+  var chs = [], cur = null, it = null;
+  raw.forEach(function (l) {
+    if (l[0] === '@') { chs.push({ n: l.slice(2), ex: [] }); }
+    else if (l[0] === '#') { cur = { t: l.slice(2), i: [] }; chs[chs.length - 1].ex.push(cur); }
+    else if (l.slice(0, 3) === 'T: ') cur.i.push({ k: 't', x: l.slice(3) });
+    else if (l.slice(0, 3) === 'N: ') cur.i.push({ k: 'n', x: l.slice(3) });
+    else if (l.slice(0, 3) === 'Q: ') { it = { k: 'q', x: l.slice(3), c: [], w: '' }; cur.i.push(it); }
+    else if (l.slice(0, 2) === '+ ') it.c.push({ x: l.slice(2), ok: true });
+    else if (l.slice(0, 2) === '- ') it.c.push({ x: l.slice(2), ok: false });
+    else if (l.slice(0, 3) === 'W: ') it.w = l.slice(3);
+  });
+  var root = document.getElementById('box');
+  var KEY = 'optim_box_v1', st = { c: 0, p: chs.map(function () { return { e: 0, i: 0 }; }) };
+  try { var sv = JSON.parse(localStorage.getItem(KEY)); if (sv && sv.p && sv.p.length === chs.length) st = sv; } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {} }
+  function el(tag, html, cls) { var n = document.createElement(tag); n.innerHTML = html; if (cls) n.className = cls; return n; }
+  function math(node) { if (window.renderMathInElement) renderMathInElement(node, { delimiters: [{ left: '$$', right: '$$', display: true }, { left: '$', right: '$', display: false }] }); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  var tabs, bar, log, ctl;
+  function P() { return st.p[st.c]; }
+  function ch() { return chs[st.c]; }
+  function done() { var n = 0, c = ch(), p = P(); c.ex.forEach(function (e, k) { if (k < p.e) n += e.i.length; }); return n + (p.e < c.ex.length ? p.i : 0); }
+  function total() { return ch().ex.reduce(function (n, e) { return n + e.i.length; }, 0); }
+  function setBar() { bar.firstChild.style.width = (100 * done() / total()) + '%'; }
+  function view() {
+    root.innerHTML = '';
+    tabs = el('div', '', 'tabs');
+    chs.forEach(function (c, k) {
+      var b = el('button', c.n, k === st.c ? 'on' : '');
+      b.onclick = function () { st.c = k; save(); view(); window.scrollTo(0, 0); };
+      tabs.appendChild(b);
+    });
+    bar = el('div', '<div></div>', 'bar'); log = el('div', ''); ctl = el('div', '');
+    root.appendChild(tabs); root.appendChild(bar); root.appendChild(log); root.appendChild(ctl);
+    var p = P(), c = ch();
+    if (p.e >= c.ex.length) {
+      log.appendChild(el('h3', 'Kapitola hotová.'));
+      var r = el('button', 'Začít kapitolu znovu', 'go'); r.onclick = function () { st.p[st.c] = { e: 0, i: 0 }; save(); view(); }; ctl.appendChild(r);
+      setBar(); return;
+    }
+    var e = c.ex[p.e];
+    log.appendChild(el('h3', e.t));
+    for (var j = 0; j < Math.min(p.i, e.i.length); j++) replay(e.i[j]);
+    math(log);
+    if (p.i >= e.i.length) finish(); else step();
+  }
+  function replay(it) {
+    if (it.k === 'q') {
+      log.appendChild(el('div', it.x, 'q'));
+      var ok = it.c.filter(function (c) { return c.ok; })[0];
+      log.appendChild(el('div', 'Správně: ' + ok.x + '. ' + it.w, 'msg'));
+    } else log.appendChild(el('div', it.x, it.k));
+  }
+  function advance() { var p = P(); p.i++; save(); if (p.i >= ch().ex[p.e].i.length) finish(); else step(); }
+  function finish() {
+    ctl.innerHTML = ''; setBar();
+    var p = P(), last = p.e + 1 >= ch().ex.length;
+    var b = el('button', last ? 'Dokončit kapitolu' : 'Další úloha →', 'go');
+    b.onclick = function () { p.e++; p.i = 0; save(); view(); window.scrollTo(0, 0); };
+    ctl.appendChild(b);
+  }
+  function step() {
+    ctl.innerHTML = ''; setBar();
+    var it = ch().ex[P().e].i[P().i];
+    if (it.k !== 'q') {
+      var d = el('div', it.x, it.k); log.appendChild(d); math(d);
+      var b = el('button', 'Dál →', 'go'); b.onclick = advance; ctl.appendChild(b);
+      b.scrollIntoView({ block: 'nearest' });
+    } else {
+      var q = el('div', it.x, 'q'); log.appendChild(q); math(q);
+      var msg = el('div', '', 'msg'); msg.style.display = 'none'; ctl.appendChild(msg);
+      shuffle(it.c).forEach(function (c) {
+        var b = el('button', c.x);
+        b.onclick = function () {
+          if (b.disabled) return;
+          if (c.ok) {
+            b.className = 'ok';
+            Array.prototype.forEach.call(ctl.querySelectorAll('button'), function (x) { x.disabled = true; });
+            msg.style.display = 'block'; msg.innerHTML = 'Správně. ' + it.w; math(msg);
+            var n = el('button', 'Dál →', 'go'); n.onclick = advance; ctl.appendChild(n);
+            n.scrollIntoView({ block: 'nearest' });
+          } else {
+            b.className = 'bad'; b.disabled = true;
+            msg.style.display = 'block'; msg.innerHTML = 'Ne. ' + it.w; math(msg);
+          }
+        };
+        ctl.appendChild(b); math(b);
+      });
+      q.scrollIntoView({ block: 'start' });
+    }
+  }
+  window.addEventListener('kx', function () { math(root); });
+  view();
+})();
+</script>
+```
